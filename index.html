@@ -1494,6 +1494,170 @@
         .floating-btn.phone i {
             font-size: 24px;
         }
+
+        /* Contact Page - Mobile Fixes */
+@media (max-width: 768px) {
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .contact-item {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 15px;
+        margin-bottom: 20px;
+        flex-wrap: nowrap;
+    }
+    
+    .contact-icon {
+        flex-shrink: 0; /* Ngăn không cho icon bị co lại */
+        width: 50px;
+        height: 50px;
+        min-width: 50px; /* Đảm bảo icon giữ kích thước tối thiểu */
+        font-size: 20px;
+    }
+    
+    .contact-text {
+        flex: 1;
+        min-width: 0; /* Cho phép text co lại đúng cách */
+    }
+    
+    .contact-text h4 {
+        font-size: 16px;
+        margin-bottom: 5px;
+    }
+    
+    .contact-text p {
+        font-size: 14px;
+        line-height: 1.5;
+        word-break: break-word; /* Xuống dòng cho chữ dài */
+        overflow-wrap: break-word;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-item {
+        gap: 12px;
+    }
+    
+    .contact-icon {
+        width: 45px;
+        height: 45px;
+        min-width: 45px;
+        font-size: 18px;
+    }
+    
+    .contact-text h4 {
+        font-size: 15px;
+    }
+    
+    .contact-text p {
+        font-size: 13px;
+    }
+    
+    /* Đảm bảo địa chỉ dài được hiển thị đẹp */
+    .contact-item:nth-child(3) .contact-text p {
+        font-size: 13px;
+        line-height: 1.4;
+    }
+}
+
+/* Footer Contact - Mobile Fixes */
+@media (max-width: 768px) {
+    .footer-contact li {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 12px;
+        flex-wrap: nowrap;
+    }
+    
+    .footer-contact i {
+        flex-shrink: 0;
+        margin-top: 3px;
+        font-size: 16px;
+        min-width: 20px; /* Đảm bảo icon giữ không gian */
+    }
+    
+    .footer-contact span {
+        flex: 1;
+        min-width: 0;
+        font-size: 13px;
+        line-height: 1.5;
+        word-break: break-word;
+    }
+}
+
+/* Header Container - Mobile Padding */
+@media (max-width: 992px) {
+    .header-container {
+        padding: 15px 20px; /* Thêm padding trái phải */
+    }
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        padding: 15px 20px;
+    }
+    
+    /* Đảm bảo logo có đủ không gian */
+    .logo-text {
+        max-width: calc(100% - 50px); /* Giới hạn chiều rộng logo text */
+    }
+}
+
+@media (max-width: 480px) {
+    .header-container {
+        padding: 15px 15px; /* Giảm padding trên mobile nhỏ */
+    }
+    
+    .logo-main {
+        font-size: 1.3rem; /* Giảm font size logo cho mobile nhỏ */
+    }
+    
+    .logo-sub {
+        font-size: 0.7rem;
+    }
+}
+
+/* Optional: Thêm padding cho mobile menu button */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: var(--secondary);
+    cursor: pointer;
+    padding: 8px; /* Thêm padding để dễ chạm */
+    margin-right: -5px; /* Điều chỉnh cân bằng */
+}
+
+@media (max-width: 992px) {
+    .mobile-menu-btn {
+        display: block;
+    }
+}
+
+/* Optional: Tăng không gian cho logo trong header mobile */
+@media (max-width: 992px) {
+    .logo {
+        flex: 1; /* Cho logo chiếm không gian tối đa */
+        min-width: 0; /* Cho phép co lại */
+    }
+    
+    .logo-icon {
+        font-size: 1.8rem; /* Giảm kích thước icon trên mobile */
+    }
+    
+    .logo-main {
+        font-size: 1.4rem; /* Giảm font size chính */
+    }
+    
+    .logo-sub {
+        font-size: 0.75rem; /* Giảm font size phụ */
+    }
+}
+
     </style>
 </head>
 <body>
