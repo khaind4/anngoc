@@ -1357,6 +1357,235 @@
                 font-size: 26px;
             }
         }
+        
+        /* ==================== */
+/* FIXES FOR MOBILE */
+/* ==================== */
+
+/* 1. Fix số điện thoại ở header trên mobile */
+@media (max-width: 992px) {
+    .header-actions {
+        gap: 15px;
+    }
+    
+    .header-actions .btn-primary {
+        padding: 10px 15px;
+        font-size: 14px;
+        min-width: 130px; /* Đảm bảo đủ chỗ cho số điện thoại */
+    }
+    
+    .header-actions .btn-primary i {
+        display: none; /* Ẩn icon điện thoại */
+    }
+    
+    .header-actions .btn-primary span {
+        margin-left: 0; /* Bỏ margin khi không có icon */
+        white-space: nowrap; /* Ngăn không cho số điện thoại xuống dòng */
+    }
+}
+
+/* 2. Fix dịch vụ hiển thị 1 dòng 1 mục trên mobile */
+@media (max-width: 992px) {
+    .services-home .categories-grid {
+        grid-template-columns: 1fr !important;
+    }
+    
+    #services .categories-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 3. Fix side menu hiển thị mỗi dòng 1 mục */
+@media (max-width: 992px) {
+    .mobile-nav {
+        gap: 0; /* Bỏ khoảng cách giữa các mục */
+    }
+    
+    .mobile-nav-link {
+        padding: 20px 0; /* Tăng padding cho dễ chạm */
+        width: 100%;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    
+    .mobile-dropdown-item {
+        padding: 18px 0 18px 25px; /* Tăng padding và thụt lề */
+        width: 100%;
+        font-size: 15px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    
+    /* Đảm bảo các mục con cũng nằm đúng vị trí */
+    .mobile-dropdown {
+        background-color: rgba(0, 0, 0, 0.02);
+    }
+}
+
+/* Fix thêm cho mobile nhỏ */
+@media (max-width: 380px) {
+    .mobile-menu {
+        width: 280px;
+        padding: 20px;
+    }
+    
+    .header-actions .btn-primary {
+        min-width: 120px;
+        font-size: 13px;
+        padding: 8px 12px;
+    }
+}
+
+/* Đảm bảo nội dung mobile menu không bị tràn */
+.mobile-menu {
+    max-height: 100vh;
+    overflow-y: auto;
+}
+
+/* ==================== */
+/* MOBILE FIXES - COMPLETE */
+/* ==================== */
+
+/* 1. FIX PHONE BUTTON ON MOBILE - COMPLETE */
+@media (max-width: 992px) {
+    .header-actions {
+        gap: 10px;
+    }
+    
+    .header-actions .btn-primary {
+        padding: 10px 15px !important;
+        font-size: 14px !important;
+        min-width: 140px;
+        max-width: 150px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    
+    /* Xóa hoàn toàn icon */
+    .header-actions .btn-primary i {
+        display: none !important;
+        width: 0 !important;
+        height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    /* Số điện thoại chiếm toàn bộ */
+    .header-actions .btn-primary span {
+        margin-left: 0 !important;
+        padding-left: 0 !important;
+        display: block;
+        width: 100%;
+        text-align: center;
+        font-size: 14px;
+        letter-spacing: -0.2px; /* Hẹp khoảng cách chữ */
+    }
+    
+    /* Xóa khoảng trống thừa */
+    .header-actions .btn-primary > *:not(span) {
+        display: none !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-actions .btn-primary {
+        min-width: 120px;
+        padding: 8px 12px !important;
+        font-size: 13px !important;
+    }
+    
+    .header-actions {
+        gap: 8px;
+    }
+}
+
+@media (max-width: 576px) {
+    .header-actions .btn-primary {
+        min-width: 110px;
+        padding: 7px 10px !important;
+        font-size: 12px !important;
+    }
+}
+
+/* 3. FIX MOBILE MENU - EACH ITEM ON SEPARATE LINE */
+.mobile-nav {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 20px;
+    gap: 0 !important;
+}
+
+/* Force each menu item to be 100% width */
+.mobile-nav-link {
+    padding: 20px 0 !important;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+    color: var(--secondary);
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    width: 100% !important;
+    text-align: left;
+    box-sizing: border-box;
+    white-space: normal !important;
+    word-wrap: break-word;
+    line-height: 1.4;
+}
+
+/* Fix dropdown items */
+.mobile-dropdown {
+    width: 100% !important;
+    background-color: rgba(0, 0, 0, 0.02);
+    border-left: 3px solid var(--primary);
+    margin-left: 0;
+    padding-left: 0;
+    box-sizing: border-box;
+}
+
+.mobile-dropdown-item {
+    padding: 16px 0 16px 25px !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    color: var(--gray);
+    font-size: 15px;
+    width: 100% !important;
+    display: block !important;
+    text-align: left;
+    box-sizing: border-box;
+    white-space: normal !important;
+    word-wrap: break-word;
+    line-height: 1.4;
+}
+
+/* Remove any flex display that might cause horizontal layout */
+.mobile-nav,
+.mobile-nav > *,
+.mobile-dropdown,
+.mobile-dropdown > * {
+    display: block !important;
+    float: none !important;
+    clear: both !important;
+}
+
+/* Fix for very small mobile */
+@media (max-width: 380px) {
+    .mobile-menu {
+        width: 280px;
+        padding: 20px;
+    }
+    
+    .mobile-nav-link {
+        padding: 18px 0 !important;
+        font-size: 15px;
+    }
+    
+    .mobile-dropdown-item {
+        padding: 15px 0 15px 22px !important;
+        font-size: 14px;
+    }
+}
     </style>
 </head>
 <body>
@@ -1434,7 +1663,7 @@
                 Sản phẩm <i class="fas fa-chevron-down"></i>
             </div>
             <div class="mobile-dropdown" id="mobileProductsMenu">
-                <a href="#cabin" class="mobile-dropdown-item" data-page="cabin">Cabin thang máy</a>
+                <a href="#cabin" class="mobile-dropdown-item" data-page="cabin">Cabin</a>
                 <a href="#doors" class="mobile-dropdown-item" data-page="doors">Cửa</a>
                 <a href="#panels" class="mobile-dropdown-item" data-page="panels">Bảng gọi</a>
                 <a href="#ceilings" class="mobile-dropdown-item" data-page="ceilings">Trần giả</a>
