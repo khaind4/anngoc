@@ -1,0 +1,3627 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AN NGỌC - Nhà cung cấp thang máy & phụ tùng chính hãng</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+    <style>
+        /* Reset và biến CSS */
+        :root {
+            --primary: #1E3A8A;
+            --primary-dark: #1E40AF;
+            --primary-light: #3B82F6;
+            --secondary: #1E293B;
+            --accent: #F59E0B;
+            --light-gray: #F8FAFC;
+            --gray: #64748B;
+            --dark-gray: #334155;
+            --border: #E2E8F0;
+            --white: #FFFFFF;
+            --shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.12);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--dark-gray);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 28px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 15px;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+        
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            text-transform: capitalize;
+            color: var(--secondary);
+            position: relative;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary);
+        }
+        
+        .section-subtitle {
+            color: var(--gray);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+        }
+        
+        .header.scrolled {
+            padding: 5px 0;
+        }
+        
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+        }
+        
+        .logo-icon {
+            color: var(--primary);
+            font-size: 2rem;
+        }
+        
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .logo-main {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--secondary);
+            line-height: 1.2;
+        }
+        
+        .logo-sub {
+            font-size: 0.8rem;
+            color: var(--gray);
+            font-weight: 400;
+        }
+        
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .nav-link {
+            font-weight: 600;
+            font-size: 15px;
+            color: var(--secondary);
+            position: relative;
+            padding: 5px 0;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: var(--transition);
+        }
+        
+        .nav-link:hover {
+            color: var(--primary);
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        
+        .nav-link.active {
+            color: var(--primary);
+        }
+        
+        .nav-link.active:after {
+            width: 100%;
+        }
+        
+        .dropdown {
+            position: relative;
+        }
+        
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: var(--white);
+            min-width: 220px;
+            box-shadow: var(--shadow-lg);
+            border-radius: 4px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: var(--transition);
+            z-index: 100;
+        }
+        
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .dropdown-item {
+            display: block;
+            padding: 12px 20px;
+            border-bottom: 1px solid var(--border);
+            color: var(--dark-gray);
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .dropdown-item:hover {
+            background-color: var(--light-gray);
+            color: var(--primary);
+        }
+        
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--secondary);
+            cursor: pointer;
+        }
+        
+        /* Slider */
+        .slider {
+            position: relative;
+            height: 600px;
+            overflow: hidden;
+            margin-top: 80px;
+        }
+        
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .slide.active {
+            opacity: 1;
+        }
+        
+        .slide-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+        
+        .slide-logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .slide-logo-icon {
+            font-size: 3.5rem;
+            color: var(--primary-light);
+        }
+        
+        .slide-logo-text {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+        
+        .slide-logo-main {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: white;
+            line-height: 1;
+        }
+        
+        .slide-logo-sub {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 400;
+        }
+        
+        .slide-title {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            max-width: 900px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .slide-text {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+        
+        .highlight {
+            color: var(--primary-light);
+            font-weight: 700;
+            padding: 0 5px;
+            border-radius: 3px;
+        }
+        
+        .slider-controls {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
+        
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.5);
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .slider-dot.active {
+            background-color: var(--primary);
+        }
+        
+        .slider .btn {
+            pointer-events: auto;
+            z-index: 10;
+        }
+
+        .slider .btn:hover {
+            background-color: #0056b3;
+            transition: background-color 0.3s ease;
+        }
+        
+        /* Product Categories Grid */
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .category-item {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+            padding: 40px 30px;
+        }
+        
+        .category-item:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .category-icon {
+            width: 80px;
+            height: 80px;
+            background-color: rgba(30, 58, 138, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--primary);
+            font-size: 32px;
+        }
+        
+        .category-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+        
+        .category-desc {
+            color: var(--gray);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+        
+        /* ==================== */
+        /* PRODUCT PAGES - UNIQLO STYLE (NO PRICE, NO QUICK VIEW) */
+        /* ==================== */
+        
+        /* Product Grid - Uniqlo Style Minimal */
+        .product-grid-uniqlo {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .product-card-uniqlo {
+            position: relative;
+            background-color: var(--white);
+            border-radius: 4px;
+            overflow: hidden;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid var(--border);
+            height: 400px;
+        }
+        
+        .product-card-uniqlo:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary);
+        }
+        
+        .product-image-uniqlo {
+            height: 70%;
+            overflow: hidden;
+            position: relative;
+            background-color: #f8f8f8;
+        }
+        
+        .product-image-uniqlo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .product-card-uniqlo:hover .product-image-uniqlo img {
+            transform: scale(1.05);
+        }
+        
+        .product-info-uniqlo {
+            padding: 25px 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: center;
+            text-align: center;
+            background-color: white;
+        }
+        
+        .product-code-uniqlo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+        
+        .product-desc-uniqlo {
+            font-size: 0.95rem;
+            color: var(--gray);
+            line-height: 1.4;
+        }
+        
+        .product-desc-2-uniqlo {
+            font-size: 0.95rem;
+            color: var(--gray);
+            line-height: 1.4;
+        }
+        
+        /* Product Grid - 5 columns for panels */
+        .product-grid-5 {
+            grid-template-columns: repeat(5, 1fr);
+        }
+        
+        /* Product Grid - 2 columns for ceilings */
+        .product-grid-2 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        
+        /* Product Grid - 4 columns for floors */
+        .product-grid-4 {
+            grid-template-columns: repeat(4, 1fr);
+        }
+        
+        /* Category Section */
+        .category-section {
+            margin-bottom: 60px;
+        }
+        
+        .category-section-title {
+            font-size: 1.8rem;
+            color: var(--secondary);
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--primary);
+            display: inline-block;
+        }
+        
+        /* ==================== */
+        /* TESTIMONIALS - SIMPLE & BEAUTIFUL */
+        /* ==================== */
+        
+        .testimonials-simple {
+            background-color: #f9fafc;
+            padding: 80px 0;
+        }
+        
+        .testimonials-simple-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .testimonials-simple-title {
+            font-size: 36px;
+            color: var(--secondary);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .testimonials-simple-subtitle {
+            font-size: 18px;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        .testimonials-simple-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .testimonial-simple-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 40px 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            position: relative;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .testimonial-simple-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .testimonial-simple-quote-icon {
+            font-size: 24px;
+            color: var(--primary);
+            opacity: 0.3;
+            margin-bottom: 20px;
+            position: absolute;
+            top: 25px;
+            left: 25px;
+        }
+        
+        .testimonial-simple-content {
+            font-size: 16px;
+            line-height: 1.8;
+            color: var(--dark-gray);
+            margin-bottom: 30px;
+            flex-grow: 1;
+            padding-top: 15px;
+        }
+        
+        .testimonial-simple-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .testimonial-simple-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid #f0f4f8;
+        }
+        
+        .testimonial-simple-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .testimonial-simple-info h4 {
+            font-size: 18px;
+            color: var(--secondary);
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        
+        .testimonial-simple-info p {
+            font-size: 14px;
+            color: var(--gray);
+        }
+        
+        .testimonial-simple-rating {
+            color: #FFC107;
+            font-size: 16px;
+            margin-top: 5px;
+        }
+        
+        /* Service Pages */
+        .service-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .service-icon {
+            width: 100px;
+            height: 100px;
+            background-color: rgba(30, 58, 138, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            color: var(--primary);
+            font-size: 40px;
+        }
+        
+        .service-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--dark-gray);
+            margin-bottom: 40px;
+        }
+        
+        .service-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            text-align: left;
+            margin-top: 50px;
+        }
+        
+        .feature-item {
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+        }
+        
+        .feature-icon {
+            color: var(--primary);
+            font-size: 24px;
+            margin-top: 5px;
+        }
+        
+        .feature-text h4 {
+            margin-bottom: 8px;
+            color: var(--secondary);
+        }
+        
+        .feature-text p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+        
+        /* About Page */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .about-text h2 {
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+        
+        .about-image {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            height: 100%;
+            min-height: 500px;
+            position: relative;
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        /* Contact Page */
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+        
+        .contact-info h2 {
+            color: var(--secondary);
+            margin-bottom: 30px;
+        }
+        
+        .contact-details {
+            margin-bottom: 40px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(30, 58, 138, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 20px;
+        }
+        
+        .contact-text h4 {
+            margin-bottom: 5px;
+            color: var(--secondary);
+        }
+        
+        .contact-text p {
+            color: var(--gray);
+            font-size: 1rem;
+        }
+        
+        .map-container {
+            height: 400px;
+            background-color: var(--light-gray);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* Projects Page */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .project-card {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            height: 300px;
+        }
+        
+        .project-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .project-card:hover .project-image {
+            transform: scale(1.05);
+        }
+        
+        .project-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 25px;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            color: var(--white);
+            transform: translateY(10px);
+            transition: var(--transition);
+        }
+        
+        .project-card:hover .project-overlay {
+            transform: translateY(0);
+        }
+        
+        .project-title {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+        
+        .project-location {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: var(--secondary);
+            color: var(--white);
+            padding-top: 70px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-col h3 {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            color: var(--white);
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-col h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--primary);
+        }
+        
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-logo-icon {
+            color: var(--primary);
+            font-size: 2rem;
+        }
+        
+        .footer-logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .footer-about {
+            font-size: 14px;
+            opacity: 0.8;
+            line-height: 1.7;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+            transform: translateX(5px);
+        }
+        
+        .footer-contact li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 15px;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .footer-contact i {
+            color: var(--primary);
+            margin-top: 3px;
+        }
+        
+        .footer-map {
+            height: 200px;
+            background-color: var(--dark-gray);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .footer-map iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .footer-bottom {
+            padding: 25px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        /* Floating Buttons */
+        .floating-buttons {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .floating-btn {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 24px;
+            box-shadow: var(--shadow-lg);
+            transition: var(--transition);
+            cursor: pointer;
+            text-decoration: none;
+        }
+        
+        .floating-btn.phone {
+            background-color: #25D366;
+        }
+        
+        .floating-btn.zalo {
+            background-color: #0068FF;
+        }
+        
+        .floating-btn.messenger {
+            background-color: #0084FF;
+        }
+        
+        .floating-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 320px;
+            height: 100vh;
+            background-color: var(--white);
+            z-index: 1001;
+            padding: 30px;
+            overflow-y: auto;
+            transition: var(--transition);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .mobile-menu.active {
+            left: 0;
+        }
+        
+        .mobile-menu-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+        
+        .mobile-menu-close {
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--secondary);
+            cursor: pointer;
+        }
+        
+        .mobile-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .mobile-nav-link {
+            padding: 15px 0;
+            font-weight: 600;
+            border-bottom: 1px solid var(--border);
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .mobile-nav-link i {
+            transition: transform 0.3s ease;
+        }
+        
+        .mobile-nav-link.active i {
+            transform: rotate(180deg);
+        }
+        
+        .mobile-dropdown {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .mobile-dropdown.active {
+            max-height: 500px;
+        }
+        
+        .mobile-dropdown-item {
+            padding: 12px 0 12px 15px;
+            border-bottom: 1px solid var(--border);
+            color: var(--gray);
+            font-size: 14px;
+        }
+        
+        /* Page Content */
+        .page-content {
+            display: none;
+        }
+        
+        .page-content.active {
+            display: block;
+        }
+        
+        /* Cập nhật grid layout theo yêu cầu */
+        /* Cabin, cửa kính, tay vịn: 1 hàng 3 sản phẩm (giữ nguyên) */
+        #cabin .product-grid-uniqlo,
+        #doors .product-grid-uniqlo {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        
+        /* Bảng gọi: 1 hàng 5 sản phẩm */
+        #panels .product-grid-uniqlo {
+            grid-template-columns: repeat(5, 1fr);
+        }
+        
+        /* Trần: 1 hàng 2 sản phẩm */
+        #ceilings .product-grid-uniqlo {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        
+        /* Sàn: 1 hàng 4 sản phẩm */
+        #floors .product-grid-uniqlo {
+            grid-template-columns: repeat(4, 1fr);
+        }
+        
+        /* Tay vịn: 1 hàng 3 sản phẩm */
+        #handrails .product-grid-uniqlo {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        /* Services page: show 2 items per row for the 4 service categories */
+        #services .categories-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        /* Home-specific services block: target only the services section on the homepage */
+        .services-home .categories-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .product-grid-uniqlo {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .categories-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .testimonials-simple-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            #panels .product-grid-uniqlo {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            
+            #floors .product-grid-uniqlo {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .about-content, .contact-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-image {
+                min-height: 400px;
+                order: -1;
+            }
+            
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .service-features {
+                grid-template-columns: 1fr;
+            }
+            
+            .slider {
+                height: 500px;
+            }
+            
+            .slide-title {
+                font-size: 2.5rem;
+            }
+            
+            .slide-text {
+                font-size: 1.1rem;
+            }
+            
+            .testimonials-simple-grid {
+                grid-template-columns: 1fr;
+                max-width: 600px;
+                margin: 0 auto;
+            }
+            
+            .testimonials-simple-title {
+                font-size: 30px;
+            }
+            
+            .product-grid-uniqlo {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            #cabin .product-grid-uniqlo,
+            #doors .product-grid-uniqlo,
+            #handrails .product-grid-uniqlo,
+            #panels .product-grid-uniqlo,
+            #ceilings .product-grid-uniqlo,
+            #floors .product-grid-uniqlo {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .product-grid-uniqlo {
+                grid-template-columns: 1fr;
+            }
+            
+            .categories-grid, .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .floating-buttons {
+                bottom: 20px;
+                right: 20px;
+            }
+            
+            .floating-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .slider {
+                height: 450px;
+            }
+            
+            .slide-title {
+                font-size: 2rem;
+            }
+            
+            .slide-text {
+                font-size: 1rem;
+            }
+            
+            .slide-logo {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+            
+            .slide-logo-text {
+                text-align: center;
+            }
+            
+            .testimonials-simple {
+                padding: 60px 0;
+            }
+            
+            .testimonial-simple-card {
+                padding: 30px 20px;
+            }
+            
+            .testimonial-simple-quote-icon {
+                top: 20px;
+                left: 20px;
+                font-size: 20px;
+            }
+            
+            .testimonial-simple-content {
+                padding-top: 10px;
+            }
+            
+            .about-image {
+                min-height: 350px;
+            }
+            
+            #cabin .product-grid-uniqlo,
+            #doors .product-grid-uniqlo,
+            #handrails .product-grid-uniqlo,
+            #panels .product-grid-uniqlo,
+            #ceilings .product-grid-uniqlo,
+            #floors .product-grid-uniqlo {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .product-grid-uniqlo {
+                grid-template-columns: 1fr;
+            }
+            
+            .slider {
+                height: 400px;
+            }
+            
+            .slide-title {
+                font-size: 1.8rem;
+            }
+            
+            .testimonials-simple-title {
+                font-size: 26px;
+            }
+        }
+        
+        /* ==================== */
+        /* FIXES FOR MOBILE */
+        /* ==================== */
+
+        /* Fix dịch vụ hiển thị 1 dòng 1 mục trên mobile */
+        @media (max-width: 992px) {
+            .services-home .categories-grid {
+                grid-template-columns: 1fr !important;
+            }
+            
+            #services .categories-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Fix side menu hiển thị mỗi dòng 1 mục */
+        @media (max-width: 992px) {
+            .mobile-nav {
+                gap: 0; /* Bỏ khoảng cách giữa các mục */
+            }
+            
+            .mobile-nav-link {
+                padding: 20px 0; /* Tăng padding cho dễ chạm */
+                width: 100%;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            }
+            
+            .mobile-dropdown-item {
+                padding: 18px 0 18px 25px; /* Tăng padding và thụt lề */
+                width: 100%;
+                font-size: 15px;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            }
+            
+            /* Đảm bảo các mục con cũng nằm đúng vị trí */
+            .mobile-dropdown {
+                background-color: rgba(0, 0, 0, 0.02);
+            }
+        }
+
+        /* Fix thêm cho mobile nhỏ */
+        @media (max-width: 380px) {
+            .mobile-menu {
+                width: 280px;
+                padding: 20px;
+            }
+        }
+
+        /* Đảm bảo nội dung mobile menu không bị tràn */
+        .mobile-menu {
+            max-height: 100vh;
+            overflow-y: auto;
+        }
+
+        /* ==================== */
+        /* MOBILE FIXES - COMPLETE */
+        /* ==================== */
+
+        /* FIX MOBILE MENU - EACH ITEM ON SEPARATE LINE */
+        .mobile-nav {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            margin-top: 20px;
+            gap: 0 !important;
+        }
+
+        /* Force each menu item to be 100% width */
+        .mobile-nav-link {
+            padding: 20px 0 !important;
+            font-weight: 600;
+            border-bottom: 1px solid var(--border);
+            color: var(--secondary);
+            display: flex !important;
+            align-items: center;
+            justify-content: space-between;
+            width: 100% !important;
+            text-align: left;
+            box-sizing: border-box;
+            white-space: normal !important;
+            word-wrap: break-word;
+            line-height: 1.4;
+        }
+
+        /* Fix dropdown items */
+        .mobile-dropdown {
+            width: 100% !important;
+            background-color: rgba(0, 0, 0, 0.02);
+            border-left: 3px solid var(--primary);
+            margin-left: 0;
+            padding-left: 0;
+            box-sizing: border-box;
+        }
+
+        .mobile-dropdown-item {
+            padding: 16px 0 16px 25px !important;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            color: var(--gray);
+            font-size: 15px;
+            width: 100% !important;
+            display: block !important;
+            text-align: left;
+            box-sizing: border-box;
+            white-space: normal !important;
+            word-wrap: break-word;
+            line-height: 1.4;
+        }
+
+        /* Remove any flex display that might cause horizontal layout */
+        .mobile-nav,
+        .mobile-nav > *,
+        .mobile-dropdown,
+        .mobile-dropdown > * {
+            display: block !important;
+            float: none !important;
+            clear: both !important;
+        }
+
+        /* Fix for very small mobile */
+        @media (max-width: 380px) {
+            .mobile-menu {
+                width: 280px;
+                padding: 20px;
+            }
+            
+            .mobile-nav-link {
+                padding: 18px 0 !important;
+                font-size: 15px;
+            }
+            
+            .mobile-dropdown-item {
+                padding: 15px 0 15px 22px !important;
+                font-size: 14px;
+            }
+        }
+        
+        /* Phone icon style */
+        .floating-btn.phone i {
+            font-size: 24px;
+        }
+
+        /* Contact Page - Mobile Fixes */
+@media (max-width: 768px) {
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .contact-item {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 15px;
+        margin-bottom: 20px;
+        flex-wrap: nowrap;
+    }
+    
+    .contact-icon {
+        flex-shrink: 0; /* Ngăn không cho icon bị co lại */
+        width: 50px;
+        height: 50px;
+        min-width: 50px; /* Đảm bảo icon giữ kích thước tối thiểu */
+        font-size: 20px;
+    }
+    
+    .contact-text {
+        flex: 1;
+        min-width: 0; /* Cho phép text co lại đúng cách */
+    }
+    
+    .contact-text h4 {
+        font-size: 16px;
+        margin-bottom: 5px;
+    }
+    
+    .contact-text p {
+        font-size: 14px;
+        line-height: 1.5;
+        word-break: break-word; /* Xuống dòng cho chữ dài */
+        overflow-wrap: break-word;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-item {
+        gap: 12px;
+    }
+    
+    .contact-icon {
+        width: 45px;
+        height: 45px;
+        min-width: 45px;
+        font-size: 18px;
+    }
+    
+    .contact-text h4 {
+        font-size: 15px;
+    }
+    
+    .contact-text p {
+        font-size: 13px;
+    }
+    
+    /* Đảm bảo địa chỉ dài được hiển thị đẹp */
+    .contact-item:nth-child(3) .contact-text p {
+        font-size: 13px;
+        line-height: 1.4;
+    }
+}
+
+/* Footer Contact - Mobile Fixes */
+@media (max-width: 768px) {
+    .footer-contact li {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 12px;
+        flex-wrap: nowrap;
+    }
+    
+    .footer-contact i {
+        flex-shrink: 0;
+        margin-top: 3px;
+        font-size: 16px;
+        min-width: 20px; /* Đảm bảo icon giữ không gian */
+    }
+    
+    .footer-contact span {
+        flex: 1;
+        min-width: 0;
+        font-size: 13px;
+        line-height: 1.5;
+        word-break: break-word;
+    }
+}
+
+/* Header Container - Mobile Padding */
+@media (max-width: 992px) {
+    .header-container {
+        padding: 15px 20px; /* Thêm padding trái phải */
+    }
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        padding: 15px 20px;
+    }
+    
+    /* Đảm bảo logo có đủ không gian */
+    .logo-text {
+        max-width: calc(100% - 50px); /* Giới hạn chiều rộng logo text */
+    }
+}
+
+@media (max-width: 480px) {
+    .header-container {
+        padding: 15px 15px; /* Giảm padding trên mobile nhỏ */
+    }
+    
+    .logo-main {
+        font-size: 1.3rem; /* Giảm font size logo cho mobile nhỏ */
+    }
+    
+    .logo-sub {
+        font-size: 0.7rem;
+    }
+}
+
+/* Optional: Thêm padding cho mobile menu button */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: var(--secondary);
+    cursor: pointer;
+    padding: 8px; /* Thêm padding để dễ chạm */
+    margin-right: -5px; /* Điều chỉnh cân bằng */
+}
+
+@media (max-width: 992px) {
+    .mobile-menu-btn {
+        display: block;
+    }
+}
+
+/* Optional: Tăng không gian cho logo trong header mobile */
+@media (max-width: 992px) {
+    .logo {
+        flex: 1; /* Cho logo chiếm không gian tối đa */
+        min-width: 0; /* Cho phép co lại */
+    }
+    
+    .logo-icon {
+        font-size: 1.8rem; /* Giảm kích thước icon trên mobile */
+    }
+    
+    .logo-main {
+        font-size: 1.4rem; /* Giảm font size chính */
+    }
+    
+    .logo-sub {
+        font-size: 0.75rem; /* Giảm font size phụ */
+    }
+}
+
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo" data-page="home">
+                <div class="logo-icon">
+                    <i class="fas fa-elevator"></i>
+                </div>
+                <div class="logo-text">
+                    <div class="logo-main">AN NGỌC</div>
+                    <div class="logo-sub">Nhà cung cấp thang máy & phụ tùng</div>
+                </div>
+            </div>
+            
+            <nav class="nav">
+                <ul class="nav-links">
+                    <li><a href="https://anpham.sagomedia.vn/profile-thang-may-ngoc-an/" target="_blank" class="nav-link" title="Xem Catalog công ty">
+                        <i class="fas fa-book-open" style="margin-right: 5px;"></i> Catalog
+                    </a></li>
+                    <li class="dropdown">
+                        <a href="#services" class="nav-link" data-page="services">Dịch vụ <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-menu">
+                            <a href="#supply" class="dropdown-item" data-page="supply">Cung cấp thang máy</a>
+                            <a href="#consulting" class="dropdown-item" data-page="consulting">Tư vấn & thiết kế</a>
+                            <a href="#installation" class="dropdown-item" data-page="installation">Thi công & lắp đặt</a>
+                            <a href="#maintenance" class="dropdown-item" data-page="maintenance">Bảo trì & sửa chữa</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#products" class="nav-link" data-page="products">Sản phẩm <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-menu">
+                            <a href="#cabin" class="dropdown-item" data-page="cabin">Cabin</a>
+                            <a href="#doors" class="dropdown-item" data-page="doors">Cửa</a>
+                            <a href="#panels" class="dropdown-item" data-page="panels">Bảng gọi</a>
+                            <a href="#ceilings" class="dropdown-item" data-page="ceilings">Trần giả</a>
+                            <a href="#handrails" class="dropdown-item" data-page="handrails">Tay vịn</a>
+                            <a href="#floors" class="dropdown-item" data-page="floors">Sàn cabin</a>
+                        </div>
+                    </li>
+                    <li><a href="#projects" class="nav-link" data-page="projects">Dự án</a></li>
+                    <li><a href="#about" class="nav-link" data-page="about">Giới thiệu</a></li>
+                    <li><a href="#contact" class="nav-link" data-page="contact">Liên hệ</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-actions">
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <div class="logo" data-page="home">
+                <div class="logo-icon">
+                    <i class="fas fa-elevator"></i>
+                </div>
+                <div class="logo-text">
+                    <div class="logo-main">AN NGỌC</div>
+                    <div class="logo-sub">NHA TRANG</div>
+                </div>
+            </div>
+            <button class="mobile-menu-close" id="mobileMenuClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="mobile-nav">
+            <a href="https://anpham.sagomedia.vn/profile-thang-may-ngoc-an/" target="_blank" class="mobile-nav-link" title="Xem Catalog công ty">
+                <i class="fas fa-book-open" style="margin-right: 5px;"></i> Catalog
+            </a>
+
+            <div class="mobile-nav-link" id="mobileServicesBtn">
+                Dịch vụ <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="mobile-dropdown" id="mobileServicesMenu">
+                <a href="#supply" class="mobile-dropdown-item" data-page="supply">Cung cấp thang máy</a>
+                <a href="#consulting" class="mobile-dropdown-item" data-page="consulting">Tư vấn & thiết kế</a>
+                <a href="#installation" class="mobile-dropdown-item" data-page="installation">Thi công & lắp đặt</a>
+                <a href="#maintenance" class="mobile-dropdown-item" data-page="maintenance">Bảo trì & sửa chữa</a>
+            </div>
+            
+            <div class="mobile-nav-link" id="mobileProductsBtn">
+                Sản phẩm <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="mobile-dropdown" id="mobileProductsMenu">
+                <a href="#cabin" class="mobile-dropdown-item" data-page="cabin">Cabin</a>
+                <a href="#doors" class="mobile-dropdown-item" data-page="doors">Cửa</a>
+                <a href="#panels" class="mobile-dropdown-item" data-page="panels">Bảng gọi</a>
+                <a href="#ceilings" class="mobile-dropdown-item" data-page="ceilings">Trần giả</a>
+                <a href="#handrails" class="mobile-dropdown-item" data-page="handrails">Tay vịn</a>
+                <a href="#floors" class="mobile-dropdown-item" data-page="floors">Sàn cabin</a>
+            </div>
+            
+            
+            
+            <a href="#projects" class="mobile-nav-link" data-page="projects">Dự án</a>
+            <a href="#about" class="mobile-nav-link" data-page="about">Giới thiệu</a>
+            <a href="#contact" class="mobile-nav-link" data-page="contact">Liên hệ</a>
+        </div>
+        
+    </div>
+
+    <!-- Main Content Container -->
+    <main id="main-content">
+        <!-- Home Page (Default) -->
+        <section id="home" class="page-content active">
+            <!-- Slider -->
+            <section class="slider">
+                <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+                    <div class="slide-content">
+                        <h1 class="slide-title">Chuyên cung cấp phụ tùng thang máy chính hãng</h1>
+                        <p class="slide-text">Cung cấp phụ tùng thang máy cho tất cả các hãng: <span class="highlight">Schindler, Kone, Otis, Thyssenkrupp, Hitachi...</span> Với định hướng phát triển bền vững, lấy <span class="highlight">an toàn – chất lượng – uy tín</span> làm giá trị cốt lõi.</p>
+                        <a href="#products" class="btn btn-primary" data-page="products">Xem sản phẩm</a>
+                    </div>
+                </div>
+                
+                <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+                    <div class="slide-content">
+                        <h1 class="slide-title">Đội ngũ kỹ thuật chuyên nghiệp, giàu kinh nghiệm</h1>
+                        <p class="slide-text">Với đội ngũ kỹ thuật viên giàu kinh nghiệm, quy trình làm việc bài bản, chúng tôi cam kết mang đến các hệ thống thang máy <span class="highlight">vận hành ổn định, an toàn, êm ái và bền bỉ</span> theo thời gian.</p>
+                        <a href="#services" class="btn btn-primary" data-page="services">Xem dịch vụ</a>
+                    </div>
+                </div>
+                
+                <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+                    <div class="slide-content">
+                        <h1 class="slide-title">Giải pháp thang máy toàn diện</h1>
+                        <p class="slide-text">Cung cấp dịch vụ trọn gói từ <span class="highlight">tư vấn, thiết kế, thi công lắp đặt đến bảo trì, sửa chữa</span> thang máy. Đảm bảo hệ thống luôn vận hành liên tục, an toàn cho người sử dụng.</p>
+                        <a href="#contact" class="btn btn-primary" data-page="contact">Liên hệ tư vấn</a>
+                    </div>
+                </div>
+                
+                <div class="slider-controls">
+                    <button class="slider-dot active" data-slide="0"></button>
+                    <button class="slider-dot" data-slide="1"></button>
+                    <button class="slider-dot" data-slide="2"></button>
+                </div>
+            </section>
+
+            <!-- Sản phẩm và dịch vụ -->
+            <section class="section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">Sản phẩm</h2>
+                        <p class="section-subtitle">Chúng tôi cung cấp đầy đủ phụ tùng, thiết bị thang máy chính hãng cho mọi nhu cầu</p>
+                    </div>
+                    
+                    <div class="categories-grid">
+                        <div class="category-item" data-page="cabin">
+                            <div class="category-icon">
+                                <i class="fas fa-home"></i>
+                            </div>
+                            <h3 class="category-title">Cabin</h3>
+                            <p class="category-desc">Cabin thang máy đa dạng mẫu mã: hiện đại, tân cổ điển, hoàng gia, home lift, cabin đặc biệt.</p>
+                            <a href="#cabin" class="btn btn-outline" data-page="cabin" style="padding: 10px 20px; font-size: 14px;">Xem sản phẩm</a>
+                        </div>
+                        
+                        <div class="category-item" data-page="doors">
+                            <div class="category-icon">
+                                <i class="fas fa-door-open"></i>
+                            </div>
+                            <h3 class="category-title">Cửa</h3>
+                            <p class="category-desc">Cửa tầng đơn giản, cửa tầng đặc biệt, cửa kính & thang home, đảm bảo an toàn và thẩm mỹ.</p>
+                            <a href="#doors" class="btn btn-outline" data-page="doors" style="padding: 10px 20px; font-size: 14px;">Xem sản phẩm</a>
+                        </div>
+                        
+                        <div class="category-item" data-page="panels">
+                            <div class="category-icon">
+                                <i class="fas fa-tablet-alt"></i>
+                            </div>
+                            <h3 class="category-title">Bảng gọi</h3>
+                            <p class="category-desc">Bảng gọi cabin, bảng gọi tầng, hiển thị, nút nhấn, phụ kiện điều khiển thang máy.</p>
+                            <a href="#panels" class="btn btn-outline" data-page="panels" style="padding: 10px 20px; font-size: 14px;">Xem sản phẩm</a>
+                        </div>
+                        
+                        <div class="category-item" data-page="ceilings">
+                            <div class="category-icon">
+                                <i class="fas fa-border-all"></i>
+                            </div>
+                            <h3 class="category-title">Trần giả</h3>
+                            <p class="category-desc">Trần giả đa dạng kiểu dáng, chất liệu cao cấp, thiết kế hiện đại và sang trọng.</p>
+                            <a href="#ceilings" class="btn btn-outline" data-page="ceilings" style="padding: 10px 20px; font-size: 14px;">Xem sản phẩm</a>
+                        </div>
+                        
+                        <div class="category-item" data-page="handrails">
+                            <div class="category-icon">
+                                <i class="fas fa-hand-holding"></i>
+                            </div>
+                            <h3 class="category-title">Tay vịn</h3>
+                            <p class="category-desc">Tay vịn thang máy chất lượng cao, an toàn, thiết kế phù hợp với mọi loại cabin thang máy.</p>
+                            <a href="#handrails" class="btn btn-outline" data-page="handrails" style="padding: 10px 20px; font-size: 14px;">Xem sản phẩm</a>
+                        </div>
+                        
+                        <div class="category-item" data-page="floors">
+                            <div class="category-icon">
+                                <i class="fas fa-th-large"></i>
+                            </div>
+                            <h3 class="category-title">Sàn cabin</h3>
+                            <p class="category-desc">Sàn cabin các loại, chất liệu bền bỉ, chống trơn trượt, dễ vệ sinh và bảo trì.</p>
+                            <a href="#floors" class="btn btn-outline" data-page="floors" style="padding: 10px 20px; font-size: 14px;">Xem sản phẩm</a>
+                        </div>
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 50px;">
+                        <a href="#products" class="btn btn-primary" data-page="products" style="padding: 12px 40px;">Xem tất cả sản phẩm</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Dịch vụ -->
+            <section class="section services-home" style="background-color: #f8fafc;">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">Dịch vụ toàn diện</h2>
+                        <p class="section-subtitle">Chúng tôi cung cấp đầy đủ các dịch vụ từ tư vấn, thiết kế, lắp đặt đến bảo trì, sửa chữa thang máy</p>
+                    </div>
+                    
+                    <div class="categories-grid">
+                        <div class="category-item" data-page="supply">
+                            <div class="category-icon">
+                                <i class="fas fa-box"></i>
+                            </div>
+                            <h3 class="category-title">Cung cấp thang máy</h3>
+                            <p class="category-desc">Cung cấp thang máy gia đình, thang máy tải khách, tải hàng đa dạng mẫu mã, vận hành ổn định, an toàn cao.</p>
+                            <a href="#supply" class="btn btn-outline" data-page="supply" style="padding: 10px 20px; font-size: 14px;">Xem chi tiết</a>
+                        </div>
+                        
+                        <div class="category-item" data-page="consulting">
+                            <div class="category-icon">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <h3 class="category-title">Tư vấn & thiết kế</h3>
+                            <p class="category-desc">Tư vấn thiết kế thang máy theo hiện trạng công trình, tối ưu tải trọng, kích thước, thẩm mỹ và tiêu chuẩn kỹ thuật.</p>
+                            <a href="#consulting" class="btn btn-outline" data-page="consulting" style="padding: 10px 20px; font-size: 14px;">Xem chi tiết</a>
+                        </div>
+                        
+                        <div class="category-item" data-page="installation">
+                            <div class="category-icon">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            <h3 class="category-title">Thi công & lắp đặt</h3>
+                            <p class="category-desc">Thi công lắp đặt thang máy chuyên nghiệp, quy trình chuẩn, đội ngũ kỹ thuật giàu kinh nghiệm.</p>
+                            <a href="#installation" class="btn btn-outline" data-page="installation" style="padding: 10px 20px; font-size: 14px;">Xem chi tiết</a>
+                        </div>
+                        
+                        <div class="category-item" data-page="maintenance">
+                            <div class="category-icon">
+                                <i class="fas fa-wrench"></i>
+                            </div>
+                            <h3 class="category-title">Bảo trì & sửa chữa</h3>
+                            <p class="category-desc">Cung cấp dịch vụ bảo trì, sửa chữa thang máy định kỳ, kiểm tra toàn diện, xử lý sự cố nhanh chóng.</p>
+                            <a href="#maintenance" class="btn btn-outline" data-page="maintenance" style="padding: 10px 20px; font-size: 14px;">Xem chi tiết</a>
+                        </div>
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 50px;">
+                        <a href="#services" class="btn btn-primary" data-page="services" style="padding: 12px 40px;">Xem tất cả dịch vụ</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Why Choose Us -->
+            <section class="section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">Tại sao chọn AN NGỌC?</h2>
+                        <p class="section-subtitle">Với hơn 10 năm kinh nghiệm trong ngành thang máy, chúng tôi tự hào mang đến giải pháp tối ưu cho mọi công trình</p>
+                    </div>
+                    
+                    <div class="categories-grid">
+                        <div class="category-item">
+                            <div class="category-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h3 class="category-title">An toàn tuyệt đối</h3>
+                            <p class="category-desc">Tuân thủ nghiêm ngặt các tiêu chuẩn an toàn quốc tế, đảm bảo vận hành ổn định và an toàn cho người sử dụng.</p>
+                        </div>
+                        
+                        <div class="category-item">
+                            <div class="category-icon">
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <h3 class="category-title">Chất lượng vượt trội</h3>
+                            <p class="category-desc">Sử dụng vật liệu cao cấp, công nghệ tiên tiến, sản phẩm được kiểm định nghiêm ngặt trước khi giao đến khách hàng.</p>
+                        </div>
+                        
+                        <div class="category-item">
+                            <div class="category-icon">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <h3 class="category-title">Hỗ trợ 24/7</h3>
+                            <p class="category-desc">Đội ngũ kỹ thuật viên luôn sẵn sàng hỗ trợ, xử lý sự cố nhanh chóng, đảm bảo thang máy vận hành liên tục.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Testimonials - New Design -->
+            <section class="section testimonials-simple">
+                <div class="container">
+                    <div class="testimonials-simple-header">
+                        <h2 class="testimonials-simple-title">Khách hàng nói gì về chúng tôi</h2>
+                        <p class="testimonials-simple-subtitle">Những phản hồi quý giá từ khách hàng đã tin tưởng và sử dụng dịch vụ của chúng tôi</p>
+                    </div>
+                    
+                    <div class="testimonials-simple-grid">
+                        <div class="testimonial-simple-card">
+                            <div class="testimonial-simple-quote-icon">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <p class="testimonial-simple-content">"Chúng tôi rất hài lòng với dịch vụ lắp đặt thang máy của AN NGỌC. Đội ngũ kỹ thuật chuyên nghiệp, thi công nhanh chóng và đảm bảo chất lượng. Thang máy vận hành êm ái và ổn định sau hơn 2 năm sử dụng."</p>
+                            <div class="testimonial-simple-author">
+                                <div class="testimonial-simple-avatar">
+                                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Ông Nguyễn Văn A">
+                                </div>
+                                <div class="testimonial-simple-info">
+                                    <h4>Ông Nguyễn Văn A</h4>
+                                    <p>Giám đốc Công ty Bất động sản Sunshine</p>
+                                    <div class="testimonial-simple-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="testimonial-simple-card">
+                            <div class="testimonial-simple-quote-icon">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <p class="testimonial-simple-content">"AN NGỌC đã cung cấp và lắp đặt hệ thống thang máy cho khách sạn 5 sao của chúng tôi. Sản phẩm chất lượng cao, thiết kế sang trọng, phù hợp với tiêu chuẩn khách sạn. Dịch vụ bảo trì định kỳ rất chuyên nghiệp và đúng hẹn."</p>
+                            <div class="testimonial-simple-author">
+                                <div class="testimonial-simple-avatar">
+                                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Bà Trần Thị B">
+                                </div>
+                                <div class="testimonial-simple-info">
+                                    <h4>Bà Trần Thị B</h4>
+                                    <p>Quản lý Khách sạn Majestic 5 sao</p>
+                                    <div class="testimonial-simple-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="testimonial-simple-card">
+                            <div class="testimonial-simple-quote-icon">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <p class="testimonial-simple-content">"Tôi đã sử dụng dịch vụ bảo trì thang máy của AN NGỌC cho tòa nhà văn phòng 15 tầng. Đội ngũ kỹ thuật nhiệt tình, có chuyên môn cao, luôn xử lý sự cố nhanh chóng. Chi phí hợp lý và minh bạch. Rất đáng tin cậy!"</p>
+                            <div class="testimonial-simple-author">
+                                <div class="testimonial-simple-avatar">
+                                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Ông Lê Văn C">
+                                </div>
+                                <div class="testimonial-simple-info">
+                                    <h4>Ông Lê Văn C</h4>
+                                    <p>Chủ tòa nhà Lim Tower</p>
+                                    <div class="testimonial-simple-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Home Projects -->
+            <section class="section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">Dự án tiêu biểu</h2>
+                        <p class="section-subtitle">Chúng tôi tự hào đã đồng hành cùng nhiều công trình lớn trên khắp cả nước</p>
+                    </div>
+                    
+                    <div class="projects-grid">
+                        <div class="project-card">
+                            <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Chung cư cao cấp" class="project-image">
+                            <div class="project-overlay">
+                                <h3 class="project-title">Chung cư Sunshine City</h3>
+                                <p class="project-location">Quận 7, TP.HCM</p>
+                                <p class="project-desc" style="font-size: 14px; margin-top: 10px;">Lắp đặt 10 thang máy tải khách cho tòa nhà 25 tầng</p>
+                            </div>
+                        </div>
+                        
+                        <div class="project-card">
+                            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Khách sạn 5 sao" class="project-image">
+                            <div class="project-overlay">
+                                <h3 class="project-title">Khách sạn Majestic 5 sao</h3>
+                                <p class="project-location">Nha Trang, Khánh Hòa</p>
+                                <p class="project-desc" style="font-size: 14px; margin-top: 10px;">Cung cấp và lắp đặt 6 thang máy cho khách sạn 5 sao</p>
+                            </div>
+                        </div>
+                        
+                        <div class="project-card">
+                            <img src="https://images.unsplash.com/photo-1513584684374-8bab748fbf90?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Bệnh viện" class="project-image">
+                            <div class="project-overlay">
+                                <h3 class="project-title">Bệnh viện Đa khoa Quốc tế</h3>
+                                <p class="project-location">Quận 1, TP.HCM</p>
+                                <p class="project-desc" style="font-size: 14px; margin-top: 10px;">Lắp đặt hệ thống thang máy tải giường bệnh và thang máy tải khách</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 50px;">
+                        <a href="#projects" class="btn btn-primary" data-page="projects">Xem tất cả dự án</a>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- Sản phẩm Page -->
+        <section id="products" class="page-content">
+            <section class="section" style="padding-top: 140px;">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">Danh mục sản phẩm</h2>
+                        <p class="section-subtitle">Chúng tôi cung cấp đầy đủ phụ tùng, thiết bị thang máy chính hãng cho mọi nhu cầu</p>
+                    </div>
+                    
+                    <div class="categories-grid">
+                        <div class="category-item" data-page="cabin">
+                            <div class="category-icon">
+                                <i class="fas fa-home"></i>
+                            </div>
+                            <h3 class="category-title">Cabin</h3>
+                            <p class="category-desc">Cabin thang máy đa dạng mẫu mã: hiện đại, tân cổ điển, hoàng gia, home lift, cabin đặc biệt.</p>
+                            <a href="#cabin" class="btn btn-outline" data-page="cabin" style="padding: 10px 20px; font-size: 14px;">Xem sản phẩm</a>
+                        </div>
+                        
+                        <div class="category-item" data-page="doors">
+                            <div class="category-icon">
+                                <i class="fas fa-door-open"></i>
+                            </div>
+                            <h3 class="category-title">Cửa</h3>
+                            <p class="category-desc">Cửa tầng đơn giản, cửa tầng đặc biệt, cửa kính & thang home, đảm bảo an toàn và thẩm mỹ.</p>
+                            <a href="#doors" class="btn btn-outline" data-page="doors" style="padding: 10px 20px; font-size: 14px;">Xem sản phẩm</a>
+                        </div>
+                        
+                        <div class="category-item" data-page="panels">
+                            <div class="category-icon">
+                                <i class="fas fa-tablet-alt"></i>
+                            </div>
+                            <h3 class="category-title">Bảng gọi</h3>
+                            <p class="category-desc">Bảng gọi cabin, bảng gọi tầng, hiển thị, nút nhấn, phụ kiện điều khiển thang máy.</p>
+                            <a href="#panels" class="btn btn-outline" data-page="panels" style="padding: 10px 20px; font-size: 14px;">Xem sản phẩm</a>
+                        </div>
+                        
+                        <div class="category-item" data-page="ceilings">
+                            <div class="category-icon">
+                                <i class="fas fa-border-all"></i>
+                            </div>
+                            <h3 class="category-title">Trần giả</h3>
+                            <p class="category-desc">Trần giả đa dạng kiểu dáng, chất liệu cao cấp, thiết kế hiện đại và sang trọng.</p>
+                            <a href="#ceilings" class="btn btn-outline" data-page="ceilings" style="padding: 10px 20px; font-size: 14px;">Xem sản phẩm</a>
+                        </div>
+                        
+                        <div class="category-item" data-page="handrails">
+                            <div class="category-icon">
+                                <i class="fas fa-hand-holding"></i>
+                            </div>
+                            <h3 class="category-title">Tay vịn</h3>
+                            <p class="category-desc">Tay vịn thang máy chất lượng cao, an toàn, thiết kế phù hợp với mọi loại cabin thang máy.</p>
+                            <a href="#handrails" class="btn btn-outline" data-page="handrails" style="padding: 10px 20px; font-size: 14px;">Xem sản phẩm</a>
+                        </div>
+                        
+                        <div class="category-item" data-page="floors">
+                            <div class="category-icon">
+                                <i class="fas fa-th-large"></i>
+                            </div>
+                            <h3 class="category-title">Sàn cabin</h3>
+                            <p class="category-desc">Sàn cabin các loại, chất liệu bền bỉ, chống trơn trượt, dễ vệ sinh và bảo trì.</p>
+                            <a href="#floors" class="btn btn-outline" data-page="floors" style="padding: 10px 20px; font-size: 14px;">Xem sản phẩm</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- Cabin Page - Uniqlo Style (No price, no quick view) -->
+        <section id="cabin" class="page-content">
+            <section class="section" style="padding-top: 140px;">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">Cabin</h2>
+                        <p class="section-subtitle">Chúng tôi cung cấp đa dạng các loại cabin thang máy phù hợp với mọi công trình từ nhà ở, văn phòng đến khách sạn cao cấp</p>
+                    </div>
+                    
+                    <!-- Cabin hiện đại -->
+                    <div class="category-section">
+                        <h3 class="category-section-title">Cabin - Hiện Đại</h3>
+                        <div class="product-grid-uniqlo">
+                            <div class="product-card-uniqlo">
+                                <div class="product-image-uniqlo">
+                                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Cabin hiện đại 1">
+                                </div>
+                                <div class="product-info-uniqlo">
+                                    <div class="product-code-uniqlo">AN | A01</div>
+                                </div>
+                            </div>
+                            
+                            <div class="product-card-uniqlo">
+                                <div class="product-image-uniqlo">
+                                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Cabin hiện đại 2">
+                                </div>
+                                <div class="product-info-uniqlo">
+                                    <div class="product-code-uniqlo">AN | A02</div>
+                                </div>
+                            </div>
+                            
+                            <div class="product-card-uniqlo">
+                                <div class="product-image-uniqlo">
+                                    <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Cabin hiện đại 3">
+                                </div>
+                                <div class="product-info-uniqlo">
+                                    <div class="product-code-uniqlo">AN | A03</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Cabin tân cổ điển -->
+                    <div class="category-section">
+                        <h3 class="category-section-title">Cabin - Tân Cổ Điển</h3>
+                        <div class="product-grid-uniqlo">
+                            <div class="product-card-uniqlo">
+                                <div class="product-image-uniqlo">
+                                    <img src="https://images.unsplash.com/photo-1570126646281-5ec88111777f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Cabin tân cổ điển 1">
+                                </div>
+                                <div class="product-info-uniqlo">
+                                    <div class="product-code-uniqlo">AN | A04</div>
+                                </div>
+                            </div>
+                            
+                            <div class="product-card-uniqlo">
+                                <div class="product-image-uniqlo">
+                                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Cabin hoàng gia 2">
+                                </div>
+                                <div class="product-info-uniqlo">
+                                    <div class="product-code-uniqlo">AN | A08</div>
+                                </div>
+                            </div>
+                            
+                            <div class="product-card-uniqlo">
+                                <div class="product-image-uniqlo">
+                                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Cabin tân cổ điển 3">
+                                </div>
+                                <div class="product-info-uniqlo">
+                                    <div class="product-code-uniqlo">AN | A06</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Cabin hoàng gia -->
+                    <div class="category-section">
+                        <h3 class="category-section-title">Cabin - Hoàng Gia</h3>
+                        <div class="product-grid-uniqlo">
+                            <div class="product-card-uniqlo">
+                                <div class="product-image-uniqlo">
+                                    <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Cabin hoàng gia 1">
+                                </div>
+                                <div class="product-info-uniqlo">
+                                    <div class="product-code-uniqlo">AN | A07</div>
+                                </div>
+                            </div>
+                            
+                            <div class="product-card-uniqlo">
+                                <div class="product-image-uniqlo">
+                                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Cabin hoàng gia 2">
+                                </div>
+                                <div class="product-info-uniqlo">
+                                    <div class="product-code-uniqlo">AN | A08</div>
+                                </div>
+                            </div>
+                            
+                            <div class="product-card-uniqlo">
+                                <div class="product-image-uniqlo">
+                                    <img src="https://images.unsplash.com/photo-1570126646281-5ec88111777f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Cabin hoàng gia 3">
+                                </div>
+                                <div class="product-info-uniqlo">
+                                    <div class="product-code-uniqlo">AN | A09</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cabin đặc biệt -->
+                    <div class="category-section">
+                        <h3 class="category-section-title">Cabin - Đặc Biệt</h3>
+                        <div class="product-grid-uniqlo">
+                            <div class="product-card-uniqlo">
+                                <div class="product-image-uniqlo">
+                                    <img src="https://images.unsplash.com/photo-1570126646281-5ec88111777f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Cabin tân cổ điển 1">
+                                </div>
+                                <div class="product-info-uniqlo">
+                                    <div class="product-code-uniqlo">AN | A10</div>
+                                </div>
+                            </div>
+                            
+                            <div class="product-card-uniqlo">
+                                <div class="product-image-uniqlo">
+                                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Cabin hoàng gia 2">
+                                </div>
+                                <div class="product-info-uniqlo">
+                                    <div class="product-code-uniqlo">AN | A11</div>
+                                </div>
+                            </div>
+                            
+                            <div class="product-card-uniqlo">
+                                <div class="product-image-uniqlo">
+                                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Cabin tân cổ điển 3">
+                                </div>
+                                <div class="product-info-uniqlo">
+                                    <div class="product-code-uniqlo">AN | A12</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cabin home lift -->
+                    <div class="category-section">
+                        <h3 class="category-section-title">Cabin - Home Lift</h3>
+                        <div class="product-grid-uniqlo">
+                            <div class="product-card-uniqlo">
+                                <div class="product-image-uniqlo">
+                                    <img src="https://images.unsplash.com/photo-1570126646281-5ec88111777f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Cabin tân cổ điển 1">
+                                </div>
+                                <div class="product-info-uniqlo">
+                                    <div class="product-code-uniqlo">AN | A13</div>
+                                </div>
+                            </div>
+                            
+                            <div class="product-card-uniqlo">
+                                <div class="product-image-uniqlo">
+                                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Cabin hoàng gia 2">
+                                </div>
+                                <div class="product-info-uniqlo">
+                                    <div class="product-code-uniqlo">AN | A14</div>
+                                </div>
+                            </div>
+                            
+                            <div class="product-card-uniqlo">
+                                <div class="product-image-uniqlo">
+                                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Cabin tân cổ điển 3">
+                                </div>
+                                <div class="product-info-uniqlo">
+                                    <div class="product-code-uniqlo">AN | A15</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- Cửa Page - Uniqlo Style (No price, no quick view) -->
+        <section id="doors" class="page-content">
+            <section class="section" style="padding-top: 140px;">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">Cửa</h2>
+                        <p class="section-subtitle">Cung cấp đa dạng các loại cửa thang máy đảm bảo an toàn, thẩm mỹ và vận hành êm ái</p>
+                    </div>
+                    
+                    <!-- Cửa tầng đơn giản -->
+                    <div class="category-section">
+                        <h3 class="category-section-title">Cửa Tầng - Đơn Giản</h3>
+                        <div class="product-grid-uniqlo">
+                            <div class="product-card-uniqlo">
+                                <div class="product-image-uniqlo">
+                                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Cửa tầng đơn giản 1">
+                                </div>
+                                <div class="product-info-uniqlo">
+                                    <div class="product-code-uniqlo">AN | A10</div>
+                                </div>
+                            </div>
+                            
+                            <div class="product-card-uniqlo">
+                                <div class="product-image-uniqlo">
+                                    <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Cửa tầng đơn giản 2">
+                                </div>
+                                <div class="product-info-uniqlo">
+                                    <div class="product-code-uniqlo">AN | A11</div>
+                                </div>
+                            </div>
+                            
+                            <div class="product-card-uniqlo">
+                                <div class="product-image-uniqlo">
+                                    <img src="https://images.unsplash.com/photo-1548613053-8aee570c15b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Cửa tầng đơn giản 3">
+                                </div>
+                                <div class="product-info-uniqlo">
+                                    <div class="product-code-uniqlo">AN | A12</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Cửa tầng đặc biệt -->
+                    <div class="category-section">
+                        <h3 class="category-section-title">Cửa Tầng - Đặc Biệt</h3>
+                        <div class="product-grid-uniqlo">
+                            <div class="product-card-uniqlo">
+                                <div class="product-image-uniqlo">
+                                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Cửa tầng đặc biệt 1">
+                                </div>
+                                <div class="product-info-uniqlo">
+                                    <div class="product-code-uniqlo">AN | A13</div>
+                                </div>
+                            </div>
+                            
+                            <div class="product-card-uniqlo">
+                                <div class="product-image-uniqlo">
+                                    <img src="https://images.unsplash.com/photo-1570126646281-5ec88111777f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Cửa tầng đặc biệt 2">
+                                </div>
+                                <div class="product-info-uniqlo">
+                                    <div class="product-code-uniqlo">AN | A14</div>
+                                </div>
+                            </div>
+                            
+                            <div class="product-card-uniqlo">
+                                <div class="product-image-uniqlo">
+                                    <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Cửa tầng đặc biệt 3">
+                                </div>
+                                <div class="product-info-uniqlo">
+                                    <div class="product-code-uniqlo">AN | A15</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Cửa kính & thang home -->
+                    <div class="category-section">
+                        <h3 class="category-section-title">Cửa Kính - Thang Home</h3>
+                        <div class="product-grid-uniqlo">
+                            <div class="product-card-uniqlo">
+                                <div class="product-image-uniqlo">
+                                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Cửa kính 1">
+                                </div>
+                                <div class="product-info-uniqlo">
+                                    <div class="product-code-uniqlo">AN | A16</div>
+                                </div>
+                            </div>
+                            
+                            <div class="product-card-uniqlo">
+                                <div class="product-image-uniqlo">
+                                    <img src="https://images.unsplash.com/photo-1548613053-8aee570c15b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Cửa kính 2">
+                                </div>
+                                <div class="product-info-uniqlo">
+                                    <div class="product-code-uniqlo">AN | A17</div>
+                                </div>
+                            </div>
+                            
+                            <div class="product-card-uniqlo">
+                                <div class="product-image-uniqlo">
+                                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Cửa kính 3">
+                                </div>
+                                <div class="product-info-uniqlo">
+                                    <div class="product-code-uniqlo">AN | A18</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- Bảng gọi Page - Uniqlo Style (No price, no quick view) -->
+        <section id="panels" class="page-content">
+            <section class="section" style="padding-top: 140px;">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">Bảng Gọi</h2>
+                        <p class="section-subtitle">Cung cấp đầy đủ các thiết bị điều khiển, bảng gọi và phụ kiện cho hệ thống thang máy</p>
+                    </div>
+                    
+                    <!-- Bảng gọi cabin -->
+                    <div class="category-section">
+                        <h3 class="category-section-title">Bảng Gọi Cabin</h3>
+                        <div class="product-grid-uniqlo">
+                            <div class="product-card-uniqlo">
+                                <div class="product-image-uniqlo">
+                                    <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Bảng gọi cabin 1">
+                                </div>
+                                <div class="product-info-uniqlo">
+                                    <div class="product-code-uniqlo">CE01</div>
+                                    <div class="product-desc-uniqlo">Mẫu hiện đại</div>
+                                    <div class="product-desc-2-uniqlo">Thiết kế tối giản</div>
+                                </div>
+                            </div>
+                            
+                            <div class="product-card-uniqlo">
+                                <div class="product-image-uniqlo">
+                                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Bảng gọi cabin 2">
+                                </div>
+                                <div class="product-info-uniqlo">
+                                    <div class="product-code-uniqlo">CE02</div>
+                                    <div class="product-desc-uniqlo">Kiểu sang trọng</div>
+                                    <div class="product-desc-2-uniqlo">Chất liệu cao cấp</div>
+                                </div>
+                            </div>
+                            
+                            <div class="product-card-uniqlo">
+                                <div class="product-image-uniqlo">
+                                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Bảng gọi cabin 3">
+                                </div>
+                                <div class="product-info-uniqlo">
+                                    <div class="product-code-uniqlo">CE03</div>
+                                    <div class="product-desc-uniqlo">Nút bấm cơ học</div>
+                                    <div class="product-desc-2-uniqlo">Độ bền cao</div>
+                                </div>
+                            </div>
+                            
+                            <div class="product-card-uniqlo">
+                                <div class="product-image-uniqlo">
+                                    <img src="https://images.unsplash.com/photo-1570126646281-5ec88111777f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Bảng gọi cabin 4">
+                                </div>
+                                <div class="product-info-uniqlo">
+                                    <div class="product-code-uniqlo">CE04</div>
+                                    <div class="product-desc-uniqlo">Màn hình cảm ứng</div>
+                                    <div class="product-desc-2-uniqlo">Công nghệ mới</div>
+                                </div>
+                            </div>
+                            
+                            <div class="product-card-uniqlo">
+                                <div class="product-image-uniqlo">
+                                    <img src="https://images.unsplash.com/photo-1548613053-8aee570c15b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Bảng gọi cabin 5">
+                                </div>
+                                <div class="product-info-uniqlo">
+                                    <div class="product-code-uniqlo">CE05</div>
+                                    <div class="product-desc-uniqlo">LED hiển thị</div>
+                                    <div class="product-desc-2-uniqlo">Tiết kiệm điện</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Bảng gọi tầng -->
+                    <div class="category-section">
+                        <h3 class="category-section-title">Bảng Gọi Tầng</h3>
+                        <div class="product-grid-uniqlo">
+                            <div class="product-card-uniqlo">
+                                <div class="product-image-uniqlo">
+                                    <img src="https://images.unsplash.com/photo-1570126646281-5ec88111777f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Bảng gọi tầng 1">
+                                </div>
+                                <div class="product-info-uniqlo">
+                                    <div class="product-code-uniqlo">CE06</div>
+                                    <div class="product-desc-uniqlo">Mẫu cơ bản</div>
+                                    <div class="product-desc-2-uniqlo">Giá thành tốt</div>
+                                </div>
+                            </div>
+                            
+                            <div class="product-card-uniqlo">
+                                <div class="product-image-uniqlo">
+                                    <img src="https://images.unsplash.com/photo-1548613053-8aee570c15b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Bảng gọi tầng 2">
+                                </div>
+                                <div class="product-info-uniqlo">
+                                    <div class="product-code-uniqlo">CE07</div>
+                                    <div class="product-desc-uniqlo">Kiểu LED</div>
+                                    <div class="product-desc-2-uniqlo">Hiển thị rõ</div>
+                                </div>
+                            </div>
+                            
+                            <div class="product-card-uniqlo">
+                                <div class="product-image-uniqlo">
+                                    <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Bảng gọi tầng 3">
+                                </div>
+                                <div class="product-info-uniqlo">
+                                    <div class="product-code-uniqlo">CE08</div>
+                                    <div class="product-desc-uniqlo">Màn hình LCD</div>
+                                    <div class="product-desc-2-uniqlo">Thông tin đầy đủ</div>
+                                </div>
+                            </div>
+                            
+                            <div class="product-card-uniqlo">
+                                <div class="product-image-uniqlo">
+                                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Bảng gọi tầng 4">
+                                </div>
+                                <div class="product-info-uniqlo">
+                                    <div class="product-code-uniqlo">CE09</div>
+                                    <div class="product-desc-uniqlo">Thiết kế nhỏ gọn</div>
+                                    <div class="product-desc-2-uniqlo">Tiết kiệm không gian</div>
+                                </div>
+                            </div>
+                            
+                            <div class="product-card-uniqlo">
+                                <div class="product-image-uniqlo">
+                                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Bảng gọi tầng 5">
+                                </div>
+                                <div class="product-info-uniqlo">
+                                    <div class="product-code-uniqlo">CE10</div>
+                                    <div class="product-desc-uniqlo">Chống nước tốt</div>
+                                    <div class="product-desc-2-uniqlo">Độ bền cao</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Phần Hiển thị -->
+                    <div class="category-section">
+                        <h3 class="category-section-title">Hiển thị</h3>
+                        <div class="product-grid-uniqlo">
+                            <div class="product-card-uniqlo">
+                                <div class="product-image-uniqlo">
+                                    <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Hiển thị 1">
+                                </div>
+                                <div class="product-info-uniqlo">
+                                    <div class="product-code-uniqlo">CE11</div>
+                                    <div class="product-desc-uniqlo">Màn hình LED 7 đoạn</div>
+                                    <div class="product-desc-2-uniqlo">Hiển thị số tầng rõ ràng</div>
+                                </div>
+                            </div>
+                            
+                            <div class="product-card-uniqlo">
+                                <div class="product-image-uniqlo">
+                                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Hiển thị 2">
+                                </div>
+                                <div class="product-info-uniqlo">
+                                    <div class="product-code-uniqlo">CE12</div>
+                                    <div class="product-desc-uniqlo">Màn hình LCD cảm ứng</div>
+                                    <div class="product-desc-2-uniqlo">Hiển thị đa chức năng</div>
+                                </div>
+                            </div>
+                            
+                            <div class="product-card-uniqlo">
+                                <div class="product-image-uniqlo">
+                                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Hiển thị 3">
+                                </div>
+                                <div class="product-info-uniqlo">
+                                    <div class="product-code-uniqlo">CE13</div>
+                                    <div class="product-desc-uniqlo">Bảng hiển thị hướng di chuyển</div>
+                                    <div class="product-desc-2-uniqlo">Hiển thị ▲▼ kèm số tầng</div>
+                                </div>
+                            </div>
+                            
+                            <div class="product-card-uniqlo">
+                                <div class="product-image-uniqlo">
+                                    <img src="https://images.unsplash.com/photo-1570126646281-5ec88111777f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Hiển thị 4">
+                                </div>
+                                <div class="product-info-uniqlo">
+                                    <div class="product-code-uniqlo">CE14</div>
+                                    <div class="product-desc-uniqlo">Màn hình hiển thị trạng thái</div>
+                                    <div class="product-desc-2-uniqlo">Hiển thị thông báo lỗi</div>
+                                </div>
+                            </div>
+                            
+                            <div class="product-card-uniqlo">
+                                <div class="product-image-uniqlo">
+                                    <img src="https://images.unsplash.com/photo-1548613053-8aee570c15b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Hiển thị 5">
+                                </div>
+                                <div class="product-info-uniqlo">
+                                    <div class="product-code-uniqlo">CE15</div>
+                                    <div class="product-desc-uniqlo">Màn hình điểm đích</div>
+                                    <div class="product-desc-2-uniqlo">Hiển thị tầng đến</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Phần Nút nhấn -->
+                    <div class="category-section">
+                        <h3 class="category-section-title">Nút nhấn</h3>
+                        <div class="product-grid-uniqlo">
+                            <div class="product-card-uniqlo">
+                                <div class="product-image-uniqlo">
+                                    <img src="https://images.unsplash.com/photo-1570126646281-5ec88111777f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Nút nhấn 1">
+                                </div>
+                                <div class="product-info-uniqlo">
+                                    <div class="product-code-uniqlo">CE20</div>
+                                    <div class="product-desc-uniqlo">Nút nhấn cơ học tiêu chuẩn</div>
+                                    <div class="product-desc-2-uniqlo">Độ bền cao, dễ sử dụng</div>
+                                </div>
+                            </div>
+                            
+                            <div class="product-card-uniqlo">
+                                <div class="product-image-uniqlo">
+                                    <img src="https://images.unsplash.com/photo-1548613053-8aee570c15b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Nút nhấn 2">
+                                </div>
+                                <div class="product-info-uniqlo">
+                                    <div class="product-code-uniqlo">CE21</div>
+                                    <div class="product-desc-uniqlo">Nút nhấn cảm ứng điện dung</div>
+                                    <div class="product-desc-2-uniqlo">Thiết kế hiện đại, nhạy</div>
+                                </div>
+                            </div>
+                            
+                            <div class="product-card-uniqlo">
+                                <div class="product-image-uniqlo">
+                                    <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Nút nhấn 3">
+                                </div>
+                                <div class="product-info-uniqlo">
+                                    <div class="product-code-uniqlo">CE22</div>
+                                    <div class="product-desc-uniqlo">Nút khẩn cấp (Emergency)</div>
+                                    <div class="product-desc-2-uniqlo">Nút báo động, dừng khẩn</div>
+                                </div>
+                            </div>
+                            
+                            <div class="product-card-uniqlo">
+                                <div class="product-image-uniqlo">
+                                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Nút nhấn 4">
+                                </div>
+                                <div class="product-info-uniqlo">
+                                    <div class="product-code-uniqlo">CE23</div>
+                                    <div class="product-desc-uniqlo">Nút đóng/mở cửa</div>
+                                    <div class="product-desc-2-uniqlo">Điều khiển đóng mở cửa cabin</div>
+                                </div>
+                            </div>
+                            
+                            <div class="product-card-uniqlo">
+                                <div class="product-image-uniqlo">
+                                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Nút nhấn 5">
+                                </div>
+                                <div class="product-info-uniqlo">
+                                    <div class="product-code-uniqlo">CE24</div>
+                                    <div class="product-desc-uniqlo">Nút chọn tầng có đèn LED</div>
+                                    <div class="product-desc-2-uniqlo">Phát sáng khi được chọn</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Phần Phụ kiện -->
+                    <div class="category-section">
+                        <h3 class="category-section-title">Phụ kiện</h3>
+                        <div class="product-grid-uniqlo">
+                            <div class="product-card-uniqlo">
+                                <div class="product-image-uniqlo">
+                                    <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Phụ kiện 1">
+                                </div>
+                                <div class="product-info-uniqlo">
+                                    <div class="product-code-uniqlo">CE30</div>
+                                    <div class="product-desc-uniqlo">Khung viền bảng gọi</div>
+                                    <div class="product-desc-2-uniqlo">Inox, nhôm, nhựa cao cấp</div>
+                                </div>
+                            </div>
+                            
+                            <div class="product-card-uniqlo">
+                                <div class="product-image-uniqlo">
+                                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Phụ kiện 2">
+                                </div>
+                                <div class="product-info-uniqlo">
+                                    <div class="product-code-uniqlo">CE31</div>
+                                    <div class="product-desc-uniqlo">Cáp kết nối tín hiệu</div>
+                                    <div class="product-desc-2-uniqlo">Cáp đồng, chống nhiễu</div>
+                                </div>
+                            </div>
+                            
+                            <div class="product-card-uniqlo">
+                                <div class="product-image-uniqlo">
+                                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Phụ kiện 3">
+                                </div>
+                                <div class="product-info-uniqlo">
+                                    <div class="product-code-uniqlo">CE32</div>
+                                    <div class="product-desc-uniqlo">Bộ chuyển đổi tín hiệu</div>
+                                    <div class="product-desc-2-uniqlo">Adapter, converter điều khiển</div>
+                                </div>
+                            </div>
+                            
+                            <div class="product-card-uniqlo">
+                                <div class="product-image-uniqlo">
+                                    <img src="https://images.unsplash.com/photo-1570126646281-5ec88111777f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Phụ kiện 4">
+                                </div>
+                                <div class="product-info-uniqlo">
+                                    <div class="product-code-uniqlo">CE33</div>
+                                    <div class="product-desc-uniqlo">Bộ điều khiển trung tâm</div>
+                                    <div class="product-desc-2-uniqlo">Mainboard, controller</div>
+                                </div>
+                            </div>
+                            
+                            <div class="product-card-uniqlo">
+                                <div class="product-image-uniqlo">
+                                    <img src="https://images.unsplash.com/photo-1548613053-8aee570c15b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Phụ kiện 5">
+                                </div>
+                                <div class="product-info-uniqlo">
+                                    <div class="product-code-uniqlo">CE34</div>
+                                    <div class="product-desc-uniqlo">Đế lắp, giá đỡ bảng gọi</div>
+                                    <div class="product-desc-2-uniqlo">Phụ kiện lắp đặt chuyên dụng</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- Trần Page - Uniqlo Style (No price, no quick view) -->
+        <section id="ceilings" class="page-content">
+            <section class="section" style="padding-top: 140px;">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">Trần Giả</h2>
+                        <p class="section-subtitle">Đa dạng mẫu mã trần giả từ đơn giản đến cao cấp, phù hợp với mọi loại cabin thang máy</p>
+                    </div>
+                    
+                    <div class="product-grid-uniqlo">
+                        <div class="product-card-uniqlo">
+                            <div class="product-image-uniqlo">
+                                <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="trần giả 1">
+                            </div>
+                            <div class="product-info-uniqlo">
+                                <div class="product-code-uniqlo">CE16</div>
+                                <div class="product-desc-uniqlo">Trần gỗ tự nhiên</div>
+                                <div class="product-desc-2-uniqlo">Sang trọng tinh tế</div>
+                            </div>
+                        </div>
+                        
+                        <div class="product-card-uniqlo">
+                            <div class="product-image-uniqlo">
+                                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="trần giả 2">
+                            </div>
+                            <div class="product-info-uniqlo">
+                                <div class="product-code-uniqlo">CE17</div>
+                                <div class="product-desc-uniqlo">Trần nhôm kính</div>
+                                <div class="product-desc-2-uniqlo">Hiện đại sáng sủa</div>
+                            </div>
+                        </div>
+                        
+                        <div class="product-card-uniqlo">
+                            <div class="product-image-uniqlo">
+                                <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="trần giả 3">
+                            </div>
+                            <div class="product-info-uniqlo">
+                                <div class="product-code-uniqlo">CE18</div>
+                                <div class="product-desc-uniqlo">Trần thạch cao</div>
+                                <div class="product-desc-2-uniqlo">Dễ dàng trang trí</div>
+                            </div>
+                        </div>
+                        
+                        <div class="product-card-uniqlo">
+                            <div class="product-image-uniqlo">
+                                <img src="https://images.unsplash.com/photo-1570126646281-5ec88111777f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="trần giả 4">
+                            </div>
+                            <div class="product-info-uniqlo">
+                                <div class="product-code-uniqlo">CE19</div>
+                                <div class="product-desc-uniqlo">Trần inox bóng</div>
+                                <div class="product-desc-2-uniqlo">Sáng bóng bền đẹp</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- Tay vịn Page - Uniqlo Style (No price, no quick view) -->
+        <section id="handrails" class="page-content">
+            <section class="section" style="padding-top: 140px;">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">Tay vịn</h2>
+                        <p class="section-subtitle">Cung cấp các loại tay vịn thang máy chất lượng cao, đảm bảo an toàn và thẩm mỹ cho người sử dụng</p>
+                    </div>
+                    
+                    <div class="product-grid-uniqlo">
+                        <div class="product-card-uniqlo">
+                            <div class="product-image-uniqlo">
+                                <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Tay vịn 1">
+                            </div>
+                            <div class="product-info-uniqlo">
+                                <div class="product-code-uniqlo">CE24</div>
+                                <div class="product-desc-uniqlo">Tay vịn inox</div>
+                                <div class="product-desc-2-uniqlo">Sáng bóng bền đẹp</div>
+                            </div>
+                        </div>
+                        
+                        <div class="product-card-uniqlo">
+                            <div class="product-image-uniqlo">
+                                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Tay vịn 2">
+                            </div>
+                            <div class="product-info-uniqlo">
+                                <div class="product-code-uniqlo">CE25</div>
+                                <div class="product-desc-uniqlo">Tay vịn gỗ sồi</div>
+                                <div class="product-desc-2-uniqlo">Sang trọng tự nhiên</div>
+                            </div>
+                        </div>
+                        
+                        <div class="product-card-uniqlo">
+                            <div class="product-image-uniqlo">
+                                <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Tay vịn 3">
+                            </div>
+                            <div class="product-info-uniqlo">
+                                <div class="product-code-uniqlo">CE26</div>
+                                <div class="product-desc-uniqlo">Tay vịn nhựa PVC</div>
+                                <div class="product-desc-2-uniqlo">Nhẹ bền chắc chắn</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- Sàn Page - Uniqlo Style (No price, no quick view) -->
+        <section id="floors" class="page-content">
+            <section class="section" style="padding-top: 140px;">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">Sàn Cabin</h2>
+                        <p class="section-subtitle">Cung cấp các loại sàn cabin chất lượng cao, chống trơn trượt, dễ vệ sinh và bảo trì</p>
+                    </div>
+                    
+                    <div class="product-grid-uniqlo">
+                        <div class="product-card-uniqlo">
+                            <div class="product-image-uniqlo">
+                                <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Sàn gỗ 1">
+                            </div>
+                            <div class="product-info-uniqlo">
+                                <div class="product-code-uniqlo">CE34</div>
+                                <div class="product-desc-uniqlo">Sàn gỗ sồi</div>
+                                <div class="product-desc-2-uniqlo">Sang trọng tự nhiên</div>
+                            </div>
+                        </div>
+                        
+                        <div class="product-card-uniqlo">
+                            <div class="product-image-uniqlo">
+                                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Sàn đá 1">
+                            </div>
+                            <div class="product-info-uniqlo">
+                                <div class="product-code-uniqlo">CE35</div>
+                                <div class="product-desc-uniqlo">Sàn đá granite</div>
+                                <div class="product-desc-2-uniqlo">Bền đẹp chắc chắn</div>
+                            </div>
+                        </div>
+                        
+                        <div class="product-card-uniqlo">
+                            <div class="product-image-uniqlo">
+                                <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Sàn nhựa 1">
+                            </div>
+                            <div class="product-info-uniqlo">
+                                <div class="product-code-uniqlo">CE36</div>
+                                <div class="product-desc-uniqlo">Sàn nhựa PVC</div>
+                                <div class="product-desc-2-uniqlo">Chống trượt dễ vệ sinh</div>
+                            </div>
+                        </div>
+                        
+                        <div class="product-card-uniqlo">
+                            <div class="product-image-uniqlo">
+                                <img src="https://images.unsplash.com/photo-1570126646281-5ec88111777f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Sàn thảm 1">
+                            </div>
+                            <div class="product-info-uniqlo">
+                                <div class="product-code-uniqlo">CE37</div>
+                                <div class="product-desc-uniqlo">Sàn thảm lông</div>
+                                <div class="product-desc-2-uniqlo">Êm ái sang trọng</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- Dịch vụ Page -->
+        <section id="services" class="page-content">
+            <section class="section" style="padding-top: 140px;">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">Dịch vụ toàn diện</h2>
+                        <p class="section-subtitle">Chúng tôi cung cấp đầy đủ các dịch vụ từ tư vấn, thiết kế, lắp đặt đến bảo trì, sửa chữa thang máy</p>
+                    </div>
+                    
+                    <div class="categories-grid">
+                        <div class="category-item" data-page="supply">
+                            <div class="category-icon">
+                                <i class="fas fa-box"></i>
+                            </div>
+                            <h3 class="category-title">Cung cấp thang máy</h3>
+                            <p class="category-desc">Cung cấp thang máy gia đình, thang máy tải khách, tải hàng đa dạng mẫu mã, vận hành ổn định, an toàn cao.</p>
+                            <a href="#supply" class="btn btn-outline" data-page="supply" style="padding: 10px 20px; font-size: 14px;">Xem chi tiết</a>
+                        </div>
+                        
+                        <div class="category-item" data-page="consulting">
+                            <div class="category-icon">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <h3 class="category-title">Tư vấn & thiết kế</h3>
+                            <p class="category-desc">Tư vấn thiết kế thang máy theo hiện trạng công trình, tối ưu tải trọng, kích thước, thẩm mỹ và tiêu chuẩn kỹ thuật.</p>
+                            <a href="#consulting" class="btn btn-outline" data-page="consulting" style="padding: 10px 20px; font-size: 14px;">Xem chi tiết</a>
+                        </div>
+                        
+                        <div class="category-item" data-page="installation">
+                            <div class="category-icon">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            <h3 class="category-title">Thi công & lắp đặt</h3>
+                            <p class="category-desc">Thi công lắp đặt thang máy chuyên nghiệp, quy trình chuẩn, đội ngũ kỹ thuật giàu kinh nghiệm.</p>
+                            <a href="#installation" class="btn btn-outline" data-page="installation" style="padding: 10px 20px; font-size: 14px;">Xem chi tiết</a>
+                        </div>
+                        
+                        <div class="category-item" data-page="maintenance">
+                            <div class="category-icon">
+                                <i class="fas fa-wrench"></i>
+                            </div>
+                            <h3 class="category-title">Bảo trì & sửa chữa</h3>
+                            <p class="category-desc">Cung cấp dịch vụ bảo trì, sửa chữa thang máy định kỳ, kiểm tra toàn diện, xử lý sự cố nhanh chóng.</p>
+                            <a href="#maintenance" class="btn btn-outline" data-page="maintenance" style="padding: 10px 20px; font-size: 14px;">Xem chi tiết</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- Cung cấp thang máy Page -->
+        <section id="supply" class="page-content">
+            <section class="section" style="padding-top: 140px;">
+                <div class="container">
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <i class="fas fa-box"></i>
+                        </div>
+                        <h2 class="section-title">Dịch vụ cung cấp thang máy</h2>
+                        
+                        <div class="service-text">
+                            <p>Cung cấp thang máy gia đình, thang máy tải khách, tải hàng đa dạng mẫu mã, vận hành ổn định, an toàn cao, phù hợp nhà ở, khách sạn, công trình thương mại hiện đại, quy mô lớn, linh hoạt.</p>
+                            
+                            <p>Chúng tôi cung cấp đa dạng các loại thang máy từ các thương hiệu hàng đầu thế giới và trong nước, đảm bảo chất lượng, độ bền và tính thẩm mỹ cao. Mỗi sản phẩm đều được kiểm định nghiêm ngặt trước khi bàn giao cho khách hàng.</p>
+                        </div>
+                        
+                        <div class="service-features">
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-home"></i>
+                                </div>
+                                <div class="feature-text">
+                                    <h4>Thang máy gia đình</h4>
+                                    <p>Thiết kế nhỏ gọn, tiết kiệm không gian, an toàn cho người già và trẻ nhỏ, phù hợp với nhà ở, biệt thự.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div class="feature-text">
+                                    <h4>Thang máy tải khách</h4>
+                                    <p>Đa dạng tải trọng từ 4-20 người, thiết kế hiện đại, vận hành êm ái, phù hợp với chung cư, văn phòng, khách sạn.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-pallet"></i>
+                                </div>
+                                <div class="feature-text">
+                                    <h4>Thang máy tải hàng</h4>
+                                    <p>Tải trọng lớn từ 100-5000kg, kết cấu vững chắc, phù hợp với nhà máy, kho bãi, siêu thị, bệnh viện.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-hand-sparkles"></i>
+                                </div>
+                                <div class="feature-text">
+                                    <h4>Thang máy đặc biệt</h4>
+                                    <p>Thang máy bệnh viện, thang máy ô tô, thang máy cho người khuyết tật, thiết kế theo yêu cầu riêng.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- Tư vấn và thiết kế Page -->
+        <section id="consulting" class="page-content">
+            <section class="section" style="padding-top: 140px;">
+                <div class="container">
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h2 class="section-title">Dịch vụ tư vấn & thiết kế thang máy</h2>
+                        
+                        <div class="service-text">
+                            <p>Thi công lắp đặt thang máy chuyên nghiệp, quy trình chuẩn, đội ngũ kỹ thuật giàu kinh nghiệm đảm bảo an toàn, tiến độ, chất lượng vận hành ổn định, bền bỉ lâu dài cho mọi công trình sử dụng.</p>
+                            
+                            <p>Chúng tôi sẽ khảo sát hiện trạng công trình, tư vấn giải pháp tối ưu nhất về không gian, tải trọng, công năng sử dụng và yếu tố thẩm mỹ. Đội ngũ kỹ sư giàu kinh nghiệm sẽ thiết kế hệ thống thang máy phù hợp với nhu cầu và ngân sách của khách hàng.</p>
+                        </div>
+                        
+                        <div class="service-features">
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-search"></i>
+                                </div>
+                                <div class="feature-text">
+                                    <h4>Khảo sát hiện trạng</h4>
+                                    <p>Khảo sát chi tiết công trình, đo đạc kích thước, đánh giá khả năng lắp đặt và đề xuất giải pháp tối ưu.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-drafting-compass"></i>
+                                </div>
+                                <div class="feature-text">
+                                    <h4>Thiết kế kỹ thuật</h4>
+                                    <p>Thiết kế bản vẽ kỹ thuật chi tiết, lựa chọn thiết bị phù hợp, đảm bảo tiêu chuẩn an toàn và thẩm mỹ.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-file-contract"></i>
+                                </div>
+                                <div class="feature-text">
+                                    <h4>Tư vấn giải pháp</h4>
+                                    <p>Tư vấn giải pháp toàn diện từ lựa chọn loại thang máy, công nghệ, vật liệu đến ngân sách đầu tư.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-clipboard-check"></i>
+                                </div>
+                                <div class="feature-text">
+                                    <h4>Phê duyệt thiết kế</h4>
+                                    <p>Trình bày và phê duyệt thiết kế với khách hàng trước khi tiến hành sản xuất và lắp đặt.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- Thi công & lắp đặt Page -->
+        <section id="installation" class="page-content">
+            <section class="section" style="padding-top: 140px;">
+                <div class="container">
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h2 class="section-title">Dịch vụ thi công & lắp đặt thang máy</h2>
+                        
+                        <div class="service-text">
+                            <p>Tư vấn thiết kế thang máy theo hiện trạng công trình, tối ưu tải trọng, kích thước, thẩm mỹ, đảm bảo tiêu chuẩn kỹ thuật, đáp ứng nhu cầu sử dụng an toàn, lâu dài cho khách hàng, bền vững.</p>
+                            
+                            <p>Với đội ngũ kỹ thuật viên giàu kinh nghiệm, được đào tạo bài bản, chúng tôi thực hiện thi công lắp đặt thang máy theo đúng tiêu chuẩn kỹ thuật, đảm bảo an toàn tuyệt đối và tiến độ cam kết. Mỗi công trình đều được giám sát chặt chẽ từ khâu chuẩn bị đến khi hoàn thiện.</p>
+                        </div>
+                        
+                        <div class="service-features">
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-hard-hat"></i>
+                                </div>
+                                <div class="feature-text">
+                                    <h4>Chuẩn bị công trình</h4>
+                                    <p>Chuẩn bị mặt bằng, hố thang, phòng máy theo đúng thiết kế kỹ thuật đã được phê duyệt.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-cogs"></i>
+                                </div>
+                                <div class="feature-text">
+                                    <h4>Lắp đặt thiết bị</h4>
+                                    <p>Lắp đặt ray dẫn hướng, cabin, cửa tầng, hệ thống điện, điều khiển theo đúng quy trình kỹ thuật.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-bolt"></i>
+                                </div>
+                                <div class="feature-text">
+                                    <h4>Đấu nối điện</h4>
+                                    <p>Đấu nối hệ thống điện, lập trình điều khiển, kiểm tra vận hành toàn bộ hệ thống.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-clipboard-list"></i>
+                                </div>
+                                <div class="feature-text">
+                                    <h4>Nghiệm thu bàn giao</h4>
+                                    <p>Kiểm tra, nghiệm thu, hướng dẫn sử dụng và bàn giao công trình cho khách hàng.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- Bảo trì & sửa chữa Page -->
+        <section id="maintenance" class="page-content">
+            <section class="section" style="padding-top: 140px;">
+                <div class="container">
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <i class="fas fa-wrench"></i>
+                        </div>
+                        <h2 class="section-title">Dịch vụ bảo trì & sửa chữa thang máy</h2>
+                        
+                        <div class="service-text">
+                            <p>Cung cấp dịch vụ bảo trì, sửa chữa thang máy định kỳ, kiểm tra toàn diện, xử lý sự cố nhanh, linh kiện chính hãng, đảm bảo hệ thống hoạt động liên tục, an toàn, ổn định, lâu dài, bền.</p>
+                            
+                            <p>Chúng tôi cung cấp các gói bảo trì định kỳ phù hợp với từng loại thang máy và nhu cầu sử dụng của khách hàng. Đội ngũ kỹ thuật viên luôn sẵn sàng xử lý sự cố 24/7, đảm bảo thang máy luôn vận hành an toàn và ổn định.</p>
+                        </div>
+                        
+                        <div class="service-features">
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-calendar-check"></i>
+                                </div>
+                                <div class="feature-text">
+                                    <h4>Bảo trì định kỳ</h4>
+                                    <p>Kiểm tra, bảo dưỡng định kỳ theo đúng lịch trình, đảm bảo thang máy luôn hoạt động tốt.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                </div>
+                                <div class="feature-text">
+                                    <h4>Sửa chữa sự cố</h4>
+                                    <p>Xử lý nhanh các sự cố, hỏng hóc, đảm bảo thang máy hoạt động trở lại trong thời gian ngắn nhất.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-box-open"></i>
+                                </div>
+                                <div class="feature-text">
+                                    <h4>Cung cấp linh kiện</h4>
+                                    <p>Cung cấp linh kiện chính hãng, đảm bảo chất lượng, độ bền và tính tương thích với hệ thống.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-headset"></i>
+                                </div>
+                                <div class="feature-text">
+                                    <h4>Hỗ trợ 24/7</h4>
+                                    <p>Hỗ trợ kỹ thuật 24/7, xử lý sự cố khẩn cấp, đảm bảo an toàn cho người sử dụng.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- Dự án Page -->
+        <section id="projects" class="page-content">
+            <section class="section" style="padding-top: 140px;">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">Dự án tiêu biểu</h2>
+                        <p class="section-subtitle">Chúng tôi tự hào đã đồng hành cùng nhiều công trình lớn trên khắp cả nước</p>
+                    </div>
+                    
+                    <div class="projects-grid">
+                        <div class="project-card">
+                            <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Chung cư cao cấp" class="project-image">
+                            <div class="project-overlay">
+                                <h3 class="project-title">Chung cư Sunshine City</h3>
+                                <p class="project-location">Quận 7, TP.HCM</p>
+                                <p class="project-desc" style="font-size: 14px; margin-top: 10px;">Lắp đặt 10 thang máy tải khách cho tòa nhà 25 tầng</p>
+                            </div>
+                        </div>
+                        
+                        <div class="project-card">
+                            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Khách sạn 5 sao" class="project-image">
+                            <div class="project-overlay">
+                                <h3 class="project-title">Khách sạn Majestic 5 sao</h3>
+                                <p class="project-location">Nha Trang, Khánh Hòa</p>
+                                <p class="project-desc" style="font-size: 14px; margin-top: 10px;">Cung cấp và lắp đặt 6 thang máy cho khách sạn 5 sao</p>
+                            </div>
+                        </div>
+                        
+                        <div class="project-card">
+                            <img src="https://images.unsplash.com/photo-1513584684374-8bab748fbf90?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Bệnh viện" class="project-image">
+                            <div class="project-overlay">
+                                <h3 class="project-title">Bệnh viện Đa khoa Quốc tế</h3>
+                                <p class="project-location">Quận 1, TP.HCM</p>
+                                <p class="project-desc" style="font-size: 14px; margin-top: 10px;">Lắp đặt hệ thống thang máy tải giường bệnh và thang máy tải khách</p>
+                            </div>
+                        </div>
+                        
+                        <div class="project-card">
+                            <img src="https://images.unsplash.com/photo-1548613053-8aee570c15b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Biệt thự" class="project-image">
+                            <div class="project-overlay">
+                                <h3 class="project-title">Biệt thự cao cấp Phú Mỹ Hưng</h3>
+                                <p class="project-location">Quận 7, TP.HCM</p>
+                                <p class="project-desc" style="font-size: 14px; margin-top: 10px;">Lắp đặt thang máy gia đình cho biệt thự 3 tầng</p>
+                            </div>
+                        </div>
+                        
+                        <div class="project-card">
+                            <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Trung tâm thương mại" class="project-image">
+                            <div class="project-overlay">
+                                <h3 class="project-title">Trung tâm thương mại Vincom</h3>
+                                <p class="project-location">Quận 1, TP.HCM</p>
+                                <p class="project-desc" style="font-size: 14px; margin-top: 10px;">Cung cấp và lắp đặt 8 thang máy cuốn và 12 thang máy tải khách</p>
+                            </div>
+                        </div>
+                        
+                        <div class="project-card">
+                            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Tòa nhà văn phòng" class="project-image">
+                            <div class="project-overlay">
+                                <h3 class="project-title">Tòa nhà văn phòng Lim Tower</h3>
+                                <p class="project-location">Quận 3, TP.HCM</p>
+                                <p class="project-desc" style="font-size: 14px; margin-top: 10px;">Bảo trì định kỳ hệ thống 6 thang máy tòa nhà 20 tầng</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- Giới thiệu Page -->
+        <section id="about" class="page-content">
+            <section class="section" style="padding-top: 140px;">
+                <div class="container">
+                    <div class="about-content">
+                        <div class="about-text">
+                            <h2 class="section-title">CÔNG TY TNHH AN NGỌC</h2>
+                            <p>Trân trọng giới thiệu là đơn vị hoạt động chuyên cung cấp phụ tùng thang máy tất cả các hãng như Schindler, Kone, Otis, Thyssenkrupp, Hitachi...</p>
+                            <p>Ngay từ những ngày đầu thành lập, công ty đã xác định rõ định hướng phát triển bền vững, lấy an toàn – chất lượng – uy tín làm giá trị cốt lõi xuyên suốt trong mọi hoạt động sản xuất và dịch vụ.</p>
+                            <p>Chúng tôi trân trọng từng công trình được khách hàng tin tưởng giao phó, luôn chú trọng nghiên cứu giải pháp kỹ thuật phù hợp với hiện trạng thực tế, tối ưu không gian, tải trọng, công năng sử dụng và yếu tố thẩm mỹ.</p>
+                            <p>Với đội ngũ kỹ thuật viên giàu kinh nghiệm, quy trình làm việc bài bản và tinh thần trách nhiệm cao, AN NGỌC cam kết mang đến các hệ thống thang máy vận hành ổn định, an toàn, êm ái và bền bỉ theo thời gian.</p>
+                            <p>Bên cạnh hoạt động cung cấp và lắp đặt, công ty đặc biệt trân trọng công tác bảo trì, bảo dưỡng và xử lý sự cố nhanh chóng, nhằm đảm bảo hệ thống luôn vận hành liên tục, an toàn cho người sử dụng.</p>
+                            <p>Với sự tận tâm trong dịch vụ và cam kết đồng hành lâu dài, CÔNG TY TNHH AN NGỌC trân trọng cảm ơn Quý khách hàng, Quý đối tác đã tin tưởng và lựa chọn chúng tôi trên hành trình kiến tạo những công trình chất lượng và giá trị bền vững.</p>
+                        </div>
+                        <div class="about-image">
+                            <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=800&q=80" alt="Về chúng tôi">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- Liên hệ Page -->
+        <section id="contact" class="page-content">
+            <section class="section" style="padding-top: 140px;">
+                <div class="container">
+                    <div class="contact-content">
+                        <div class="contact-info">
+                            <h2 class="section-title">Thông tin liên hệ</h2>
+                            <div class="contact-details">
+                                <div class="contact-item">
+                                    <div class="contact-icon">
+                                        <i class="fas fa-phone-alt"></i>
+                                    </div>
+                                    <div class="contact-text">
+                                        <h4>Hotline</h4>
+                                        <p>0968 666 888</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="contact-item">
+                                    <div class="contact-icon">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <div class="contact-text">
+                                        <h4>Email</h4>
+                                        <p>anngoc@gmail.com</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="contact-item">
+                                    <div class="contact-icon">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                    <div class="contact-text">
+                                        <h4>Địa chỉ</h4>
+                                        <p>469 Nguyễn Hữu Thọ, Tân Hưng, Quận 7, Thành phố Hồ Chí Minh, Việt Nam</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="contact-item">
+                                    <div class="contact-icon">
+                                        <i class="fas fa-clock"></i>
+                                    </div>
+                                    <div class="contact-text">
+                                        <h4>Giờ làm việc</h4>
+                                        <p>Thứ 2 - Thứ 7: 8:00 - 17:30</p>
+                                        <p>Chủ nhật: 8:00 - 12:00</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-map">
+                            <h2 class="section-title">Vị trí của chúng tôi</h2>
+                            <div class="map-container">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3920.105982665338!2d106.70222277603423!3d10.732724189425502!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f9c4d98c4c5%3A0x1f8c1d6e3b9c8b1a!2zNDY5IE5ndXnhu4VuIEjhu691IFRob8awLCBUw6JuIEjhu691LCBRdeG6rW4gNywgSOG7kyBDaMOtIE1pbmgsIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1698765432105!5m2!1svi!2s" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <div class="footer-logo-icon">
+                            <i class="fas fa-elevator"></i>
+                        </div>
+                        <div class="footer-logo-text">AN NGỌC</div>
+                    </div>
+                    <p class="footer-about">
+                        Công ty TNHH AN NGỌC chuyên cung cấp phụ tùng thang máy, dịch vụ lắp đặt, bảo trì và sửa chữa thang máy chất lượng cao. Với đội ngũ kỹ thuật giàu kinh nghiệm, chúng tôi cam kết mang đến giải pháp tối ưu cho mọi công trình.
+                    </p>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Liên kết nhanh</h3>
+                    <ul class="footer-links">
+                        <li><a href="#products" data-page="products"><i class="fas fa-chevron-right"></i> Sản phẩm</a></li>
+                        <li><a href="#services" data-page="services"><i class="fas fa-chevron-right"></i> Dịch vụ</a></li>
+                        <li><a href="#projects" data-page="projects"><i class="fas fa-chevron-right"></i> Dự án</a></li>
+                        <li><a href="#about" data-page="about"><i class="fas fa-chevron-right"></i> Giới thiệu</a></li>
+                        <li><a href="#contact" data-page="contact"><i class="fas fa-chevron-right"></i> Liên hệ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Liên hệ</h3>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-phone-alt"></i>
+                            <span>Hotline: 0968 666 888</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>Email: anngoc@gmail.com</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Địa chỉ: 469 Nguyễn Hữu Thọ, Tân Hưng, Quận 7, Thành phố Hồ Chí Minh, Việt Nam</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span>Giờ làm việc: Thứ 2 - Thứ 7: 8:00 - 17:30</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Bản đồ</h3>
+                    <div class="footer-map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3920.105982665338!2d106.70222277603423!3d10.732724189425502!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f9c4d98c4c5%3A0x1f8c1d6e3b9c8b1a!2zNDY5IE5ndXnhu4VuIEjhu691IFRob8awLCBUw6JuIEjhu691LCBRdeG6rW4gNywgSOG7kyBDaMOt IE1pbmgsIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1698765432105!5m2!1svi!2s" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 CÔNG TY TNHH AN NGỌC. Tất cả các quyền được bảo lưu.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Buttons -->
+    <div class="floating-buttons">
+        <a href="tel:0968666888" class="floating-btn phone" title="Gọi điện thoại">
+            <i class="fas fa-phone-alt"></i>
+        </a>
+        <a href="https://zalo.me/0968666888" target="_blank" class="floating-btn zalo" title="Chat Zalo">
+            Z
+        </a>
+        <a href="https://m.me/anngoc.elevator" target="_blank" class="floating-btn messenger" title="Chat Messenger">
+            <i class="fab fa-facebook-messenger"></i>
+        </a>
+    </div>
+
+    <script>
+        // DOM Elements
+        const header = document.querySelector('.header');
+        const logo = document.querySelector('.logo');
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileMenuClose = document.getElementById('mobileMenuClose');
+        const mobileProductsBtn = document.getElementById('mobileProductsBtn');
+        const mobileProductsMenu = document.getElementById('mobileProductsMenu');
+        const mobileServicesBtn = document.getElementById('mobileServicesBtn');
+        const mobileServicesMenu = document.getElementById('mobileServicesMenu');
+        const navLinks = document.querySelectorAll('.nav-link, .dropdown-item, .mobile-nav-link, .mobile-dropdown-item, .hero-buttons a, .category-item a, .btn[data-page]');
+        const pages = document.querySelectorAll('.page-content');
+        const floatingButtons = document.querySelectorAll('.floating-btn');
+        const slides = document.querySelectorAll('.slide');
+        const sliderDots = document.querySelectorAll('.slider-dot');
+        
+        // Slider functionality
+        let currentSlide = 0;
+        let slideInterval;
+
+        function showSlide(index) {
+            // Hide all slides
+            slides.forEach(slide => {
+                slide.classList.remove('active');
+            });
+            
+            // Remove active class from all dots
+            sliderDots.forEach(dot => {
+                dot.classList.remove('active');
+            });
+            
+            // Show the selected slide
+            slides[index].classList.add('active');
+            sliderDots[index].classList.add('active');
+            currentSlide = index;
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        // Initialize slider
+        function initSlider() {
+            // Set up click events for dots
+            sliderDots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    clearInterval(slideInterval);
+                    showSlide(index);
+                    startSlider();
+                });
+            });
+            
+            // Start auto slide
+            startSlider();
+        }
+
+        function startSlider() {
+            slideInterval = setInterval(nextSlide, 5000);
+        }
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+        });
+
+        mobileMenuClose.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+        });
+
+        // Mobile dropdown toggle
+        mobileProductsBtn.addEventListener('click', () => {
+            mobileProductsBtn.classList.toggle('active');
+            mobileProductsMenu.classList.toggle('active');
+        });
+
+        mobileServicesBtn.addEventListener('click', () => {
+            mobileServicesBtn.classList.toggle('active');
+            mobileServicesMenu.classList.toggle('active');
+        });
+
+        // Page navigation
+        function showPage(pageId) {
+            // Hide all pages
+            pages.forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Show the requested page
+            const targetPage = document.getElementById(pageId);
+            if (targetPage) {
+                targetPage.classList.add('active');
+                
+                // Scroll to top of the page
+                window.scrollTo(0, 0);
+                
+                // Update active nav link
+                updateActiveNavLink(pageId);
+            }
+            
+            // Close mobile menu if open
+            mobileMenu.classList.remove('active');
+        }
+
+        // Update active nav link
+        function updateActiveNavLink(pageId) {
+            // Remove active class from all nav links
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+            });
+            
+            // Add active class to current page nav link
+            const currentNavLink = document.querySelector(`.nav-link[data-page="${pageId}"]`);
+            if (currentNavLink) {
+                currentNavLink.classList.add('active');
+            }
+        }
+
+        // Handle navigation clicks
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                // Don't prevent default for external links
+                if (link.hasAttribute('target') || link.getAttribute('href').includes('http')) {
+                    return;
+                }
+                
+                e.preventDefault();
+                
+                const pageId = link.getAttribute('data-page') || link.getAttribute('href')?.substring(1);
+                
+                if (pageId) {
+                    showPage(pageId);
+                    
+                    // Update URL hash
+                    window.history.pushState(null, null, `#${pageId}`);
+                }
+            });
+        });
+
+        // Logo click event - go to home page
+        logo.addEventListener('click', (e) => {
+            e.preventDefault();
+            showPage('home');
+            window.history.pushState(null, null, '#home');
+        });
+
+        // Handle browser back/forward buttons
+        window.addEventListener('popstate', () => {
+            const pageId = window.location.hash.substring(1) || 'home';
+            showPage(pageId);
+        });
+
+        // Initialize page based on URL hash
+        function initializePage() {
+            const pageId = window.location.hash.substring(1) || 'home';
+            showPage(pageId);
+            
+            // Initialize slider
+            initSlider();
+        }
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', initializePage);
+    </script>
+</body>
+</html>
