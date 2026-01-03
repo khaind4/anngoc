@@ -545,10 +545,6 @@
         }
         
         .product-desc-2-uniqlo {
-            /* color: var(--dark-gray);
-            font-size: 0.85rem;
-            margin-top: 5px;
-            font-weight: 500; */
             font-size: 0.95rem;
             color: var(--gray);
             line-height: 1.4;
@@ -1032,8 +1028,8 @@
             text-decoration: none;
         }
         
-        .floating-btn.catalog {
-            background-color: var(--primary);
+        .floating-btn.phone {
+            background-color: #25D366;
         }
         
         .floating-btn.zalo {
@@ -1359,233 +1355,145 @@
         }
         
         /* ==================== */
-/* FIXES FOR MOBILE */
-/* ==================== */
+        /* FIXES FOR MOBILE */
+        /* ==================== */
 
-/* 1. Fix số điện thoại ở header trên mobile */
-@media (max-width: 992px) {
-    .header-actions {
-        gap: 15px;
-    }
-    
-    .header-actions .btn-primary {
-        padding: 10px 15px;
-        font-size: 14px;
-        min-width: 130px; /* Đảm bảo đủ chỗ cho số điện thoại */
-    }
-    
-    .header-actions .btn-primary i {
-        display: none; /* Ẩn icon điện thoại */
-    }
-    
-    .header-actions .btn-primary span {
-        margin-left: 0; /* Bỏ margin khi không có icon */
-        white-space: nowrap; /* Ngăn không cho số điện thoại xuống dòng */
-    }
-}
+        /* Fix dịch vụ hiển thị 1 dòng 1 mục trên mobile */
+        @media (max-width: 992px) {
+            .services-home .categories-grid {
+                grid-template-columns: 1fr !important;
+            }
+            
+            #services .categories-grid {
+                grid-template-columns: 1fr;
+            }
+        }
 
-/* 2. Fix dịch vụ hiển thị 1 dòng 1 mục trên mobile */
-@media (max-width: 992px) {
-    .services-home .categories-grid {
-        grid-template-columns: 1fr !important;
-    }
-    
-    #services .categories-grid {
-        grid-template-columns: 1fr;
-    }
-}
+        /* Fix side menu hiển thị mỗi dòng 1 mục */
+        @media (max-width: 992px) {
+            .mobile-nav {
+                gap: 0; /* Bỏ khoảng cách giữa các mục */
+            }
+            
+            .mobile-nav-link {
+                padding: 20px 0; /* Tăng padding cho dễ chạm */
+                width: 100%;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            }
+            
+            .mobile-dropdown-item {
+                padding: 18px 0 18px 25px; /* Tăng padding và thụt lề */
+                width: 100%;
+                font-size: 15px;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            }
+            
+            /* Đảm bảo các mục con cũng nằm đúng vị trí */
+            .mobile-dropdown {
+                background-color: rgba(0, 0, 0, 0.02);
+            }
+        }
 
-/* 3. Fix side menu hiển thị mỗi dòng 1 mục */
-@media (max-width: 992px) {
-    .mobile-nav {
-        gap: 0; /* Bỏ khoảng cách giữa các mục */
-    }
-    
-    .mobile-nav-link {
-        padding: 20px 0; /* Tăng padding cho dễ chạm */
-        width: 100%;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    }
-    
-    .mobile-dropdown-item {
-        padding: 18px 0 18px 25px; /* Tăng padding và thụt lề */
-        width: 100%;
-        font-size: 15px;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    }
-    
-    /* Đảm bảo các mục con cũng nằm đúng vị trí */
-    .mobile-dropdown {
-        background-color: rgba(0, 0, 0, 0.02);
-    }
-}
+        /* Fix thêm cho mobile nhỏ */
+        @media (max-width: 380px) {
+            .mobile-menu {
+                width: 280px;
+                padding: 20px;
+            }
+        }
 
-/* Fix thêm cho mobile nhỏ */
-@media (max-width: 380px) {
-    .mobile-menu {
-        width: 280px;
-        padding: 20px;
-    }
-    
-    .header-actions .btn-primary {
-        min-width: 120px;
-        font-size: 13px;
-        padding: 8px 12px;
-    }
-}
+        /* Đảm bảo nội dung mobile menu không bị tràn */
+        .mobile-menu {
+            max-height: 100vh;
+            overflow-y: auto;
+        }
 
-/* Đảm bảo nội dung mobile menu không bị tràn */
-.mobile-menu {
-    max-height: 100vh;
-    overflow-y: auto;
-}
+        /* ==================== */
+        /* MOBILE FIXES - COMPLETE */
+        /* ==================== */
 
-/* ==================== */
-/* MOBILE FIXES - COMPLETE */
-/* ==================== */
+        /* FIX MOBILE MENU - EACH ITEM ON SEPARATE LINE */
+        .mobile-nav {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            margin-top: 20px;
+            gap: 0 !important;
+        }
 
-/* 1. FIX PHONE BUTTON ON MOBILE - COMPLETE */
-@media (max-width: 992px) {
-    .header-actions {
-        gap: 10px;
-    }
-    
-    .header-actions .btn-primary {
-        padding: 10px 15px !important;
-        font-size: 14px !important;
-        min-width: 140px;
-        max-width: 150px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-    }
-    
-    /* Xóa hoàn toàn icon */
-    .header-actions .btn-primary i {
-        display: none !important;
-        width: 0 !important;
-        height: 0 !important;
-        margin: 0 !important;
-        padding: 0 !important;
-    }
-    
-    /* Số điện thoại chiếm toàn bộ */
-    .header-actions .btn-primary span {
-        margin-left: 0 !important;
-        padding-left: 0 !important;
-        display: block;
-        width: 100%;
-        text-align: center;
-        font-size: 14px;
-        letter-spacing: -0.2px; /* Hẹp khoảng cách chữ */
-    }
-    
-    /* Xóa khoảng trống thừa */
-    .header-actions .btn-primary > *:not(span) {
-        display: none !important;
-    }
-}
+        /* Force each menu item to be 100% width */
+        .mobile-nav-link {
+            padding: 20px 0 !important;
+            font-weight: 600;
+            border-bottom: 1px solid var(--border);
+            color: var(--secondary);
+            display: flex !important;
+            align-items: center;
+            justify-content: space-between;
+            width: 100% !important;
+            text-align: left;
+            box-sizing: border-box;
+            white-space: normal !important;
+            word-wrap: break-word;
+            line-height: 1.4;
+        }
 
-@media (max-width: 768px) {
-    .header-actions .btn-primary {
-        min-width: 120px;
-        padding: 8px 12px !important;
-        font-size: 13px !important;
-    }
-    
-    .header-actions {
-        gap: 8px;
-    }
-}
+        /* Fix dropdown items */
+        .mobile-dropdown {
+            width: 100% !important;
+            background-color: rgba(0, 0, 0, 0.02);
+            border-left: 3px solid var(--primary);
+            margin-left: 0;
+            padding-left: 0;
+            box-sizing: border-box;
+        }
 
-@media (max-width: 576px) {
-    .header-actions .btn-primary {
-        min-width: 110px;
-        padding: 7px 10px !important;
-        font-size: 12px !important;
-    }
-}
+        .mobile-dropdown-item {
+            padding: 16px 0 16px 25px !important;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            color: var(--gray);
+            font-size: 15px;
+            width: 100% !important;
+            display: block !important;
+            text-align: left;
+            box-sizing: border-box;
+            white-space: normal !important;
+            word-wrap: break-word;
+            line-height: 1.4;
+        }
 
-/* 3. FIX MOBILE MENU - EACH ITEM ON SEPARATE LINE */
-.mobile-nav {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    margin-top: 20px;
-    gap: 0 !important;
-}
+        /* Remove any flex display that might cause horizontal layout */
+        .mobile-nav,
+        .mobile-nav > *,
+        .mobile-dropdown,
+        .mobile-dropdown > * {
+            display: block !important;
+            float: none !important;
+            clear: both !important;
+        }
 
-/* Force each menu item to be 100% width */
-.mobile-nav-link {
-    padding: 20px 0 !important;
-    font-weight: 600;
-    border-bottom: 1px solid var(--border);
-    color: var(--secondary);
-    display: flex !important;
-    align-items: center;
-    justify-content: space-between;
-    width: 100% !important;
-    text-align: left;
-    box-sizing: border-box;
-    white-space: normal !important;
-    word-wrap: break-word;
-    line-height: 1.4;
-}
-
-/* Fix dropdown items */
-.mobile-dropdown {
-    width: 100% !important;
-    background-color: rgba(0, 0, 0, 0.02);
-    border-left: 3px solid var(--primary);
-    margin-left: 0;
-    padding-left: 0;
-    box-sizing: border-box;
-}
-
-.mobile-dropdown-item {
-    padding: 16px 0 16px 25px !important;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    color: var(--gray);
-    font-size: 15px;
-    width: 100% !important;
-    display: block !important;
-    text-align: left;
-    box-sizing: border-box;
-    white-space: normal !important;
-    word-wrap: break-word;
-    line-height: 1.4;
-}
-
-/* Remove any flex display that might cause horizontal layout */
-.mobile-nav,
-.mobile-nav > *,
-.mobile-dropdown,
-.mobile-dropdown > * {
-    display: block !important;
-    float: none !important;
-    clear: both !important;
-}
-
-/* Fix for very small mobile */
-@media (max-width: 380px) {
-    .mobile-menu {
-        width: 280px;
-        padding: 20px;
-    }
-    
-    .mobile-nav-link {
-        padding: 18px 0 !important;
-        font-size: 15px;
-    }
-    
-    .mobile-dropdown-item {
-        padding: 15px 0 15px 22px !important;
-        font-size: 14px;
-    }
-}
+        /* Fix for very small mobile */
+        @media (max-width: 380px) {
+            .mobile-menu {
+                width: 280px;
+                padding: 20px;
+            }
+            
+            .mobile-nav-link {
+                padding: 18px 0 !important;
+                font-size: 15px;
+            }
+            
+            .mobile-dropdown-item {
+                padding: 15px 0 15px 22px !important;
+                font-size: 14px;
+            }
+        }
+        
+        /* Phone icon style */
+        .floating-btn.phone i {
+            font-size: 24px;
+        }
     </style>
 </head>
 <body>
@@ -1604,6 +1512,9 @@
             
             <nav class="nav">
                 <ul class="nav-links">
+                    <li><a href="https://anpham.sagomedia.vn/profile-thang-may-ngoc-an/" target="_blank" class="nav-link" title="Xem Profile công ty">
+                        <i class="fas fa-book-open" style="margin-right: 5px;"></i> Profile
+                    </a></li>
                     <li class="dropdown">
                         <a href="#products" class="nav-link" data-page="products">Sản phẩm <i class="fas fa-chevron-down"></i></a>
                         <div class="dropdown-menu">
@@ -1631,9 +1542,6 @@
             </nav>
             
             <div class="header-actions">
-                <button class="btn btn-primary" data-page="contact">
-                    <i class="fas fa-phone-alt"></i> <span style="margin-left: 8px;">0968 666 888</span>
-                </button>
                 <button class="mobile-menu-btn" id="mobileMenuBtn">
                     <i class="fas fa-bars"></i>
                 </button>
@@ -1659,6 +1567,10 @@
         </div>
         
         <div class="mobile-nav">
+            <a href="https://anpham.sagomedia.vn/profile-thang-may-ngoc-an/" target="_blank" class="mobile-nav-link" title="Xem Profile công ty">
+                <i class="fas fa-book-open" style="margin-right: 5px;"></i> Profile
+            </a>
+            
             <div class="mobile-nav-link" id="mobileProductsBtn">
                 Sản phẩm <i class="fas fa-chevron-down"></i>
             </div>
@@ -1740,129 +1652,127 @@
                 </div>
             </section>
 
-            <!-- Sản phẩm và dịch vụ - Thêm sau phần "Tại sao chọn AN NGỌC?" -->
-<section class="section">
-    <div class="container">
-        <div class="section-header">
-            <h2 class="section-title">Sản phẩm</h2>
-            <p class="section-subtitle">Chúng tôi cung cấp đầy đủ phụ tùng, thiết bị thang máy chính hãng cho mọi nhu cầu</p>
-        </div>
-        
-        <!-- Toàn bộ giao diện trang sản phẩm -->
-        <div class="categories-grid">
-            <div class="category-item" data-page="cabin">
-                <div class="category-icon">
-                    <i class="fas fa-home"></i>
+            <!-- Sản phẩm và dịch vụ -->
+            <section class="section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">Sản phẩm</h2>
+                        <p class="section-subtitle">Chúng tôi cung cấp đầy đủ phụ tùng, thiết bị thang máy chính hãng cho mọi nhu cầu</p>
+                    </div>
+                    
+                    <div class="categories-grid">
+                        <div class="category-item" data-page="cabin">
+                            <div class="category-icon">
+                                <i class="fas fa-home"></i>
+                            </div>
+                            <h3 class="category-title">Cabin</h3>
+                            <p class="category-desc">Cabin thang máy đa dạng mẫu mã: hiện đại, tân cổ điển, hoàng gia, home lift, cabin đặc biệt.</p>
+                            <a href="#cabin" class="btn btn-outline" data-page="cabin" style="padding: 10px 20px; font-size: 14px;">Xem sản phẩm</a>
+                        </div>
+                        
+                        <div class="category-item" data-page="doors">
+                            <div class="category-icon">
+                                <i class="fas fa-door-open"></i>
+                            </div>
+                            <h3 class="category-title">Cửa</h3>
+                            <p class="category-desc">Cửa tầng đơn giản, cửa tầng đặc biệt, cửa kính & thang home, đảm bảo an toàn và thẩm mỹ.</p>
+                            <a href="#doors" class="btn btn-outline" data-page="doors" style="padding: 10px 20px; font-size: 14px;">Xem sản phẩm</a>
+                        </div>
+                        
+                        <div class="category-item" data-page="panels">
+                            <div class="category-icon">
+                                <i class="fas fa-tablet-alt"></i>
+                            </div>
+                            <h3 class="category-title">Bảng gọi</h3>
+                            <p class="category-desc">Bảng gọi cabin, bảng gọi tầng, hiển thị, nút nhấn, phụ kiện điều khiển thang máy.</p>
+                            <a href="#panels" class="btn btn-outline" data-page="panels" style="padding: 10px 20px; font-size: 14px;">Xem sản phẩm</a>
+                        </div>
+                        
+                        <div class="category-item" data-page="ceilings">
+                            <div class="category-icon">
+                                <i class="fas fa-border-all"></i>
+                            </div>
+                            <h3 class="category-title">Trần giả</h3>
+                            <p class="category-desc">Trần giả đa dạng kiểu dáng, chất liệu cao cấp, thiết kế hiện đại và sang trọng.</p>
+                            <a href="#ceilings" class="btn btn-outline" data-page="ceilings" style="padding: 10px 20px; font-size: 14px;">Xem sản phẩm</a>
+                        </div>
+                        
+                        <div class="category-item" data-page="handrails">
+                            <div class="category-icon">
+                                <i class="fas fa-hand-holding"></i>
+                            </div>
+                            <h3 class="category-title">Tay vịn</h3>
+                            <p class="category-desc">Tay vịn thang máy chất lượng cao, an toàn, thiết kế phù hợp với mọi loại cabin thang máy.</p>
+                            <a href="#handrails" class="btn btn-outline" data-page="handrails" style="padding: 10px 20px; font-size: 14px;">Xem sản phẩm</a>
+                        </div>
+                        
+                        <div class="category-item" data-page="floors">
+                            <div class="category-icon">
+                                <i class="fas fa-th-large"></i>
+                            </div>
+                            <h3 class="category-title">Sàn cabin</h3>
+                            <p class="category-desc">Sàn cabin các loại, chất liệu bền bỉ, chống trơn trượt, dễ vệ sinh và bảo trì.</p>
+                            <a href="#floors" class="btn btn-outline" data-page="floors" style="padding: 10px 20px; font-size: 14px;">Xem sản phẩm</a>
+                        </div>
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 50px;">
+                        <a href="#products" class="btn btn-primary" data-page="products" style="padding: 12px 40px;">Xem tất cả sản phẩm</a>
+                    </div>
                 </div>
-                <h3 class="category-title">Cabin</h3>
-                <p class="category-desc">Cabin thang máy đa dạng mẫu mã: hiện đại, tân cổ điển, hoàng gia, home lift, cabin đặc biệt.</p>
-                <a href="#cabin" class="btn btn-outline" data-page="cabin" style="padding: 10px 20px; font-size: 14px;">Xem sản phẩm</a>
-            </div>
-            
-            <div class="category-item" data-page="doors">
-                <div class="category-icon">
-                    <i class="fas fa-door-open"></i>
-                </div>
-                <h3 class="category-title">Cửa</h3>
-                <p class="category-desc">Cửa tầng đơn giản, cửa tầng đặc biệt, cửa kính & thang home, đảm bảo an toàn và thẩm mỹ.</p>
-                <a href="#doors" class="btn btn-outline" data-page="doors" style="padding: 10px 20px; font-size: 14px;">Xem sản phẩm</a>
-            </div>
-            
-            <div class="category-item" data-page="panels">
-                <div class="category-icon">
-                    <i class="fas fa-tablet-alt"></i>
-                </div>
-                <h3 class="category-title">Bảng gọi</h3>
-                <p class="category-desc">Bảng gọi cabin, bảng gọi tầng, hiển thị, nút nhấn, phụ kiện điều khiển thang máy.</p>
-                <a href="#panels" class="btn btn-outline" data-page="panels" style="padding: 10px 20px; font-size: 14px;">Xem sản phẩm</a>
-            </div>
-            
-            <div class="category-item" data-page="ceilings">
-                <div class="category-icon">
-                    <i class="fas fa-border-all"></i>
-                </div>
-                <h3 class="category-title">Trần giả</h3>
-                <p class="category-desc">Trần giả đa dạng kiểu dáng, chất liệu cao cấp, thiết kế hiện đại và sang trọng.</p>
-                <a href="#ceilings" class="btn btn-outline" data-page="ceilings" style="padding: 10px 20px; font-size: 14px;">Xem sản phẩm</a>
-            </div>
-            
-            <div class="category-item" data-page="handrails">
-                <div class="category-icon">
-                    <i class="fas fa-hand-holding"></i>
-                </div>
-                <h3 class="category-title">Tay vịn</h3>
-                <p class="category-desc">Tay vịn thang máy chất lượng cao, an toàn, thiết kế phù hợp với mọi loại cabin thang máy.</p>
-                <a href="#handrails" class="btn btn-outline" data-page="handrails" style="padding: 10px 20px; font-size: 14px;">Xem sản phẩm</a>
-            </div>
-            
-            <div class="category-item" data-page="floors">
-                <div class="category-icon">
-                    <i class="fas fa-th-large"></i>
-                </div>
-                <h3 class="category-title">Sàn cabin</h3>
-                <p class="category-desc">Sàn cabin các loại, chất liệu bền bỉ, chống trơn trượt, dễ vệ sinh và bảo trì.</p>
-                <a href="#floors" class="btn btn-outline" data-page="floors" style="padding: 10px 20px; font-size: 14px;">Xem sản phẩm</a>
-            </div>
-        </div>
-        
-        <div style="text-align: center; margin-top: 50px;">
-            <a href="#products" class="btn btn-primary" data-page="products" style="padding: 12px 40px;">Xem tất cả sản phẩm</a>
-        </div>
-    </div>
-</section>
+            </section>
 
-<!-- Dịch vụ - Thêm ngay sau phần Sản phẩm -->
-<section class="section services-home" style="background-color: #f8fafc;">
-    <div class="container">
-        <div class="section-header">
-            <h2 class="section-title">Dịch vụ toàn diện</h2>
-            <p class="section-subtitle">Chúng tôi cung cấp đầy đủ các dịch vụ từ tư vấn, thiết kế, lắp đặt đến bảo trì, sửa chữa thang máy</p>
-        </div>
-        
-        <!-- Toàn bộ giao diện trang dịch vụ - 4 mục cho đối xứng -->
-        <div class="categories-grid">
-            <div class="category-item" data-page="supply">
-                <div class="category-icon">
-                    <i class="fas fa-box"></i>
+            <!-- Dịch vụ -->
+            <section class="section services-home" style="background-color: #f8fafc;">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">Dịch vụ toàn diện</h2>
+                        <p class="section-subtitle">Chúng tôi cung cấp đầy đủ các dịch vụ từ tư vấn, thiết kế, lắp đặt đến bảo trì, sửa chữa thang máy</p>
+                    </div>
+                    
+                    <div class="categories-grid">
+                        <div class="category-item" data-page="supply">
+                            <div class="category-icon">
+                                <i class="fas fa-box"></i>
+                            </div>
+                            <h3 class="category-title">Cung cấp thang máy</h3>
+                            <p class="category-desc">Cung cấp thang máy gia đình, thang máy tải khách, tải hàng đa dạng mẫu mã, vận hành ổn định, an toàn cao.</p>
+                            <a href="#supply" class="btn btn-outline" data-page="supply" style="padding: 10px 20px; font-size: 14px;">Xem chi tiết</a>
+                        </div>
+                        
+                        <div class="category-item" data-page="consulting">
+                            <div class="category-icon">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <h3 class="category-title">Tư vấn & thiết kế</h3>
+                            <p class="category-desc">Tư vấn thiết kế thang máy theo hiện trạng công trình, tối ưu tải trọng, kích thước, thẩm mỹ và tiêu chuẩn kỹ thuật.</p>
+                            <a href="#consulting" class="btn btn-outline" data-page="consulting" style="padding: 10px 20px; font-size: 14px;">Xem chi tiết</a>
+                        </div>
+                        
+                        <div class="category-item" data-page="installation">
+                            <div class="category-icon">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            <h3 class="category-title">Thi công & lắp đặt</h3>
+                            <p class="category-desc">Thi công lắp đặt thang máy chuyên nghiệp, quy trình chuẩn, đội ngũ kỹ thuật giàu kinh nghiệm.</p>
+                            <a href="#installation" class="btn btn-outline" data-page="installation" style="padding: 10px 20px; font-size: 14px;">Xem chi tiết</a>
+                        </div>
+                        
+                        <div class="category-item" data-page="maintenance">
+                            <div class="category-icon">
+                                <i class="fas fa-wrench"></i>
+                            </div>
+                            <h3 class="category-title">Bảo trì & sửa chữa</h3>
+                            <p class="category-desc">Cung cấp dịch vụ bảo trì, sửa chữa thang máy định kỳ, kiểm tra toàn diện, xử lý sự cố nhanh chóng.</p>
+                            <a href="#maintenance" class="btn btn-outline" data-page="maintenance" style="padding: 10px 20px; font-size: 14px;">Xem chi tiết</a>
+                        </div>
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 50px;">
+                        <a href="#services" class="btn btn-primary" data-page="services" style="padding: 12px 40px;">Xem tất cả dịch vụ</a>
+                    </div>
                 </div>
-                <h3 class="category-title">Cung cấp thang máy</h3>
-                <p class="category-desc">Cung cấp thang máy gia đình, thang máy tải khách, tải hàng đa dạng mẫu mã, vận hành ổn định, an toàn cao.</p>
-                <a href="#supply" class="btn btn-outline" data-page="supply" style="padding: 10px 20px; font-size: 14px;">Xem chi tiết</a>
-            </div>
-            
-            <div class="category-item" data-page="consulting">
-                <div class="category-icon">
-                    <i class="fas fa-lightbulb"></i>
-                </div>
-                <h3 class="category-title">Tư vấn & thiết kế</h3>
-                <p class="category-desc">Tư vấn thiết kế thang máy theo hiện trạng công trình, tối ưu tải trọng, kích thước, thẩm mỹ và tiêu chuẩn kỹ thuật.</p>
-                <a href="#consulting" class="btn btn-outline" data-page="consulting" style="padding: 10px 20px; font-size: 14px;">Xem chi tiết</a>
-            </div>
-            
-            <div class="category-item" data-page="installation">
-                <div class="category-icon">
-                    <i class="fas fa-tools"></i>
-                </div>
-                <h3 class="category-title">Thi công & lắp đặt</h3>
-                <p class="category-desc">Thi công lắp đặt thang máy chuyên nghiệp, quy trình chuẩn, đội ngũ kỹ thuật giàu kinh nghiệm.</p>
-                <a href="#installation" class="btn btn-outline" data-page="installation" style="padding: 10px 20px; font-size: 14px;">Xem chi tiết</a>
-            </div>
-            
-            <div class="category-item" data-page="maintenance">
-                <div class="category-icon">
-                    <i class="fas fa-wrench"></i>
-                </div>
-                <h3 class="category-title">Bảo trì & sửa chữa</h3>
-                <p class="category-desc">Cung cấp dịch vụ bảo trì, sửa chữa thang máy định kỳ, kiểm tra toàn diện, xử lý sự cố nhanh chóng.</p>
-                <a href="#maintenance" class="btn btn-outline" data-page="maintenance" style="padding: 10px 20px; font-size: 14px;">Xem chi tiết</a>
-            </div>
-        </div>
-        
-        <div style="text-align: center; margin-top: 50px;">
-            <a href="#services" class="btn btn-primary" data-page="services" style="padding: 12px 40px;">Xem tất cả dịch vụ</a>
-        </div>
-    </div>
-</section>
+            </section>
 
             <!-- Why Choose Us -->
             <section class="section">
@@ -2512,188 +2422,188 @@
                         </div>
                     </div>
 
-                    <!-- Phần Hiển thị - Thêm sau phần "Bảng gọi tầng" -->
-<div class="category-section">
-    <h3 class="category-section-title">Hiển thị</h3>
-    <div class="product-grid-uniqlo">
-        <div class="product-card-uniqlo">
-            <div class="product-image-uniqlo">
-                <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Hiển thị 1">
-            </div>
-            <div class="product-info-uniqlo">
-                <div class="product-code-uniqlo">CE11</div>
-                <div class="product-desc-uniqlo">Màn hình LED 7 đoạn</div>
-                <div class="product-desc-2-uniqlo">Hiển thị số tầng rõ ràng</div>
-            </div>
-        </div>
-        
-        <div class="product-card-uniqlo">
-            <div class="product-image-uniqlo">
-                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Hiển thị 2">
-            </div>
-            <div class="product-info-uniqlo">
-                <div class="product-code-uniqlo">CE12</div>
-                <div class="product-desc-uniqlo">Màn hình LCD cảm ứng</div>
-                <div class="product-desc-2-uniqlo">Hiển thị đa chức năng</div>
-            </div>
-        </div>
-        
-        <div class="product-card-uniqlo">
-            <div class="product-image-uniqlo">
-                <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Hiển thị 3">
-            </div>
-            <div class="product-info-uniqlo">
-                <div class="product-code-uniqlo">CE13</div>
-                <div class="product-desc-uniqlo">Bảng hiển thị hướng di chuyển</div>
-                <div class="product-desc-2-uniqlo">Hiển thị ▲▼ kèm số tầng</div>
-            </div>
-        </div>
-        
-        <div class="product-card-uniqlo">
-            <div class="product-image-uniqlo">
-                <img src="https://images.unsplash.com/photo-1570126646281-5ec88111777f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Hiển thị 4">
-            </div>
-            <div class="product-info-uniqlo">
-                <div class="product-code-uniqlo">CE14</div>
-                <div class="product-desc-uniqlo">Màn hình hiển thị trạng thái</div>
-                <div class="product-desc-2-uniqlo">Hiển thị thông báo lỗi</div>
-            </div>
-        </div>
-        
-        <div class="product-card-uniqlo">
-            <div class="product-image-uniqlo">
-                <img src="https://images.unsplash.com/photo-1548613053-8aee570c15b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Hiển thị 5">
-            </div>
-            <div class="product-info-uniqlo">
-                <div class="product-code-uniqlo">CE15</div>
-                <div class="product-desc-uniqlo">Màn hình điểm đích</div>
-                <div class="product-desc-2-uniqlo">Hiển thị tầng đến</div>
-            </div>
-        </div>
-    </div>
-</div>
+                    <!-- Phần Hiển thị -->
+                    <div class="category-section">
+                        <h3 class="category-section-title">Hiển thị</h3>
+                        <div class="product-grid-uniqlo">
+                            <div class="product-card-uniqlo">
+                                <div class="product-image-uniqlo">
+                                    <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Hiển thị 1">
+                                </div>
+                                <div class="product-info-uniqlo">
+                                    <div class="product-code-uniqlo">CE11</div>
+                                    <div class="product-desc-uniqlo">Màn hình LED 7 đoạn</div>
+                                    <div class="product-desc-2-uniqlo">Hiển thị số tầng rõ ràng</div>
+                                </div>
+                            </div>
+                            
+                            <div class="product-card-uniqlo">
+                                <div class="product-image-uniqlo">
+                                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Hiển thị 2">
+                                </div>
+                                <div class="product-info-uniqlo">
+                                    <div class="product-code-uniqlo">CE12</div>
+                                    <div class="product-desc-uniqlo">Màn hình LCD cảm ứng</div>
+                                    <div class="product-desc-2-uniqlo">Hiển thị đa chức năng</div>
+                                </div>
+                            </div>
+                            
+                            <div class="product-card-uniqlo">
+                                <div class="product-image-uniqlo">
+                                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Hiển thị 3">
+                                </div>
+                                <div class="product-info-uniqlo">
+                                    <div class="product-code-uniqlo">CE13</div>
+                                    <div class="product-desc-uniqlo">Bảng hiển thị hướng di chuyển</div>
+                                    <div class="product-desc-2-uniqlo">Hiển thị ▲▼ kèm số tầng</div>
+                                </div>
+                            </div>
+                            
+                            <div class="product-card-uniqlo">
+                                <div class="product-image-uniqlo">
+                                    <img src="https://images.unsplash.com/photo-1570126646281-5ec88111777f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Hiển thị 4">
+                                </div>
+                                <div class="product-info-uniqlo">
+                                    <div class="product-code-uniqlo">CE14</div>
+                                    <div class="product-desc-uniqlo">Màn hình hiển thị trạng thái</div>
+                                    <div class="product-desc-2-uniqlo">Hiển thị thông báo lỗi</div>
+                                </div>
+                            </div>
+                            
+                            <div class="product-card-uniqlo">
+                                <div class="product-image-uniqlo">
+                                    <img src="https://images.unsplash.com/photo-1548613053-8aee570c15b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Hiển thị 5">
+                                </div>
+                                <div class="product-info-uniqlo">
+                                    <div class="product-code-uniqlo">CE15</div>
+                                    <div class="product-desc-uniqlo">Màn hình điểm đích</div>
+                                    <div class="product-desc-2-uniqlo">Hiển thị tầng đến</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-<!-- Phần Nút nhấn - Thêm sau phần "Hiển thị" -->
-<div class="category-section">
-    <h3 class="category-section-title">Nút nhấn</h3>
-    <div class="product-grid-uniqlo">
-        <div class="product-card-uniqlo">
-            <div class="product-image-uniqlo">
-                <img src="https://images.unsplash.com/photo-1570126646281-5ec88111777f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Nút nhấn 1">
-            </div>
-            <div class="product-info-uniqlo">
-                <div class="product-code-uniqlo">CE20</div>
-                <div class="product-desc-uniqlo">Nút nhấn cơ học tiêu chuẩn</div>
-                <div class="product-desc-2-uniqlo">Độ bền cao, dễ sử dụng</div>
-            </div>
-        </div>
-        
-        <div class="product-card-uniqlo">
-            <div class="product-image-uniqlo">
-                <img src="https://images.unsplash.com/photo-1548613053-8aee570c15b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Nút nhấn 2">
-            </div>
-            <div class="product-info-uniqlo">
-                <div class="product-code-uniqlo">CE21</div>
-                <div class="product-desc-uniqlo">Nút nhấn cảm ứng điện dung</div>
-                <div class="product-desc-2-uniqlo">Thiết kế hiện đại, nhạy</div>
-            </div>
-        </div>
-        
-        <div class="product-card-uniqlo">
-            <div class="product-image-uniqlo">
-                <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Nút nhấn 3">
-            </div>
-            <div class="product-info-uniqlo">
-                <div class="product-code-uniqlo">CE22</div>
-                <div class="product-desc-uniqlo">Nút khẩn cấp (Emergency)</div>
-                <div class="product-desc-2-uniqlo">Nút báo động, dừng khẩn</div>
-            </div>
-        </div>
-        
-        <div class="product-card-uniqlo">
-            <div class="product-image-uniqlo">
-                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Nút nhấn 4">
-            </div>
-            <div class="product-info-uniqlo">
-                <div class="product-code-uniqlo">CE23</div>
-                <div class="product-desc-uniqlo">Nút đóng/mở cửa</div>
-                <div class="product-desc-2-uniqlo">Điều khiển đóng mở cửa cabin</div>
-            </div>
-        </div>
-        
-        <div class="product-card-uniqlo">
-            <div class="product-image-uniqlo">
-                <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Nút nhấn 5">
-            </div>
-            <div class="product-info-uniqlo">
-                <div class="product-code-uniqlo">CE24</div>
-                <div class="product-desc-uniqlo">Nút chọn tầng có đèn LED</div>
-                <div class="product-desc-2-uniqlo">Phát sáng khi được chọn</div>
-            </div>
-        </div>
-    </div>
-</div>
+                    <!-- Phần Nút nhấn -->
+                    <div class="category-section">
+                        <h3 class="category-section-title">Nút nhấn</h3>
+                        <div class="product-grid-uniqlo">
+                            <div class="product-card-uniqlo">
+                                <div class="product-image-uniqlo">
+                                    <img src="https://images.unsplash.com/photo-1570126646281-5ec88111777f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Nút nhấn 1">
+                                </div>
+                                <div class="product-info-uniqlo">
+                                    <div class="product-code-uniqlo">CE20</div>
+                                    <div class="product-desc-uniqlo">Nút nhấn cơ học tiêu chuẩn</div>
+                                    <div class="product-desc-2-uniqlo">Độ bền cao, dễ sử dụng</div>
+                                </div>
+                            </div>
+                            
+                            <div class="product-card-uniqlo">
+                                <div class="product-image-uniqlo">
+                                    <img src="https://images.unsplash.com/photo-1548613053-8aee570c15b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Nút nhấn 2">
+                                </div>
+                                <div class="product-info-uniqlo">
+                                    <div class="product-code-uniqlo">CE21</div>
+                                    <div class="product-desc-uniqlo">Nút nhấn cảm ứng điện dung</div>
+                                    <div class="product-desc-2-uniqlo">Thiết kế hiện đại, nhạy</div>
+                                </div>
+                            </div>
+                            
+                            <div class="product-card-uniqlo">
+                                <div class="product-image-uniqlo">
+                                    <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Nút nhấn 3">
+                                </div>
+                                <div class="product-info-uniqlo">
+                                    <div class="product-code-uniqlo">CE22</div>
+                                    <div class="product-desc-uniqlo">Nút khẩn cấp (Emergency)</div>
+                                    <div class="product-desc-2-uniqlo">Nút báo động, dừng khẩn</div>
+                                </div>
+                            </div>
+                            
+                            <div class="product-card-uniqlo">
+                                <div class="product-image-uniqlo">
+                                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Nút nhấn 4">
+                                </div>
+                                <div class="product-info-uniqlo">
+                                    <div class="product-code-uniqlo">CE23</div>
+                                    <div class="product-desc-uniqlo">Nút đóng/mở cửa</div>
+                                    <div class="product-desc-2-uniqlo">Điều khiển đóng mở cửa cabin</div>
+                                </div>
+                            </div>
+                            
+                            <div class="product-card-uniqlo">
+                                <div class="product-image-uniqlo">
+                                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Nút nhấn 5">
+                                </div>
+                                <div class="product-info-uniqlo">
+                                    <div class="product-code-uniqlo">CE24</div>
+                                    <div class="product-desc-uniqlo">Nút chọn tầng có đèn LED</div>
+                                    <div class="product-desc-2-uniqlo">Phát sáng khi được chọn</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-<!-- Phần Phụ kiện - Thêm sau phần "Nút nhấn" -->
-<div class="category-section">
-    <h3 class="category-section-title">Phụ kiện</h3>
-    <div class="product-grid-uniqlo">
-        <div class="product-card-uniqlo">
-            <div class="product-image-uniqlo">
-                <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Phụ kiện 1">
-            </div>
-            <div class="product-info-uniqlo">
-                <div class="product-code-uniqlo">CE30</div>
-                <div class="product-desc-uniqlo">Khung viền bảng gọi</div>
-                <div class="product-desc-2-uniqlo">Inox, nhôm, nhựa cao cấp</div>
-            </div>
-        </div>
-        
-        <div class="product-card-uniqlo">
-            <div class="product-image-uniqlo">
-                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Phụ kiện 2">
-            </div>
-            <div class="product-info-uniqlo">
-                <div class="product-code-uniqlo">CE31</div>
-                <div class="product-desc-uniqlo">Cáp kết nối tín hiệu</div>
-                <div class="product-desc-2-uniqlo">Cáp đồng, chống nhiễu</div>
-            </div>
-        </div>
-        
-        <div class="product-card-uniqlo">
-            <div class="product-image-uniqlo">
-                <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Phụ kiện 3">
-            </div>
-            <div class="product-info-uniqlo">
-                <div class="product-code-uniqlo">CE32</div>
-                <div class="product-desc-uniqlo">Bộ chuyển đổi tín hiệu</div>
-                <div class="product-desc-2-uniqlo">Adapter, converter điều khiển</div>
-            </div>
-        </div>
-        
-        <div class="product-card-uniqlo">
-            <div class="product-image-uniqlo">
-                <img src="https://images.unsplash.com/photo-1570126646281-5ec88111777f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Phụ kiện 4">
-            </div>
-            <div class="product-info-uniqlo">
-                <div class="product-code-uniqlo">CE33</div>
-                <div class="product-desc-uniqlo">Bộ điều khiển trung tâm</div>
-                <div class="product-desc-2-uniqlo">Mainboard, controller</div>
-            </div>
-        </div>
-        
-        <div class="product-card-uniqlo">
-            <div class="product-image-uniqlo">
-                <img src="https://images.unsplash.com/photo-1548613053-8aee570c15b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Phụ kiện 5">
-            </div>
-            <div class="product-info-uniqlo">
-                <div class="product-code-uniqlo">CE34</div>
-                <div class="product-desc-uniqlo">Đế lắp, giá đỡ bảng gọi</div>
-                <div class="product-desc-2-uniqlo">Phụ kiện lắp đặt chuyên dụng</div>
-            </div>
-        </div>
-    </div>
-</div>
+                    <!-- Phần Phụ kiện -->
+                    <div class="category-section">
+                        <h3 class="category-section-title">Phụ kiện</h3>
+                        <div class="product-grid-uniqlo">
+                            <div class="product-card-uniqlo">
+                                <div class="product-image-uniqlo">
+                                    <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Phụ kiện 1">
+                                </div>
+                                <div class="product-info-uniqlo">
+                                    <div class="product-code-uniqlo">CE30</div>
+                                    <div class="product-desc-uniqlo">Khung viền bảng gọi</div>
+                                    <div class="product-desc-2-uniqlo">Inox, nhôm, nhựa cao cấp</div>
+                                </div>
+                            </div>
+                            
+                            <div class="product-card-uniqlo">
+                                <div class="product-image-uniqlo">
+                                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Phụ kiện 2">
+                                </div>
+                                <div class="product-info-uniqlo">
+                                    <div class="product-code-uniqlo">CE31</div>
+                                    <div class="product-desc-uniqlo">Cáp kết nối tín hiệu</div>
+                                    <div class="product-desc-2-uniqlo">Cáp đồng, chống nhiễu</div>
+                                </div>
+                            </div>
+                            
+                            <div class="product-card-uniqlo">
+                                <div class="product-image-uniqlo">
+                                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Phụ kiện 3">
+                                </div>
+                                <div class="product-info-uniqlo">
+                                    <div class="product-code-uniqlo">CE32</div>
+                                    <div class="product-desc-uniqlo">Bộ chuyển đổi tín hiệu</div>
+                                    <div class="product-desc-2-uniqlo">Adapter, converter điều khiển</div>
+                                </div>
+                            </div>
+                            
+                            <div class="product-card-uniqlo">
+                                <div class="product-image-uniqlo">
+                                    <img src="https://images.unsplash.com/photo-1570126646281-5ec88111777f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Phụ kiện 4">
+                                </div>
+                                <div class="product-info-uniqlo">
+                                    <div class="product-code-uniqlo">CE33</div>
+                                    <div class="product-desc-uniqlo">Bộ điều khiển trung tâm</div>
+                                    <div class="product-desc-2-uniqlo">Mainboard, controller</div>
+                                </div>
+                            </div>
+                            
+                            <div class="product-card-uniqlo">
+                                <div class="product-image-uniqlo">
+                                    <img src="https://images.unsplash.com/photo-1548613053-8aee570c15b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" alt="Phụ kiện 5">
+                                </div>
+                                <div class="product-info-uniqlo">
+                                    <div class="product-code-uniqlo">CE34</div>
+                                    <div class="product-desc-uniqlo">Đế lắp, giá đỡ bảng gọi</div>
+                                    <div class="product-desc-2-uniqlo">Phụ kiện lắp đặt chuyên dụng</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
         </section>
@@ -3377,15 +3287,15 @@
 
     <!-- Floating Buttons -->
     <div class="floating-buttons">
-        <a href="https://anpham.sagomedia.vn/profile-thang-may-ngoc-an/" target="_blank" class="floating-btn catalog" title="Xem catalog sản phẩm">
-            <i class="fas fa-book-open"></i>
+        <a href="tel:0968666888" class="floating-btn phone" title="Gọi điện thoại">
+            <i class="fas fa-phone-alt"></i>
         </a>
-        <div class="floating-btn zalo" title="Chat Zalo">
+        <a href="https://zalo.me/0968666888" target="_blank" class="floating-btn zalo" title="Chat Zalo">
             Z
-        </div>
-        <div class="floating-btn messenger" title="Chat Messenger">
+        </a>
+        <a href="https://m.me/anngoc.elevator" target="_blank" class="floating-btn messenger" title="Chat Messenger">
             <i class="fab fa-facebook-messenger"></i>
-        </div>
+        </a>
     </div>
 
     <script>
@@ -3519,6 +3429,11 @@
         // Handle navigation clicks
         navLinks.forEach(link => {
             link.addEventListener('click', (e) => {
+                // Don't prevent default for external links
+                if (link.hasAttribute('target') || link.getAttribute('href').includes('http')) {
+                    return;
+                }
+                
                 e.preventDefault();
                 
                 const pageId = link.getAttribute('data-page') || link.getAttribute('href')?.substring(1);
@@ -3545,22 +3460,6 @@
             showPage(pageId);
         });
 
-        // Floating buttons actions
-        floatingButtons.forEach(btn => {
-            // Skip catalog button as it's already a link
-            if (!btn.classList.contains('catalog')) {
-                btn.addEventListener('click', () => {
-                    const type = btn.classList.contains('zalo') ? 'zalo' : 'messenger';
-                    
-                    if (type === 'zalo') {
-                        alert('Mở Zalo để liên hệ với chúng tôi!');
-                    } else {
-                        alert('Mở Messenger để chat với chúng tôi!');
-                    }
-                });
-            }
-        });
-
         // Initialize page based on URL hash
         function initializePage() {
             const pageId = window.location.hash.substring(1) || 'home';
@@ -3569,27 +3468,6 @@
             // Initialize slider
             initSlider();
         }
-
-        // Initialize Zalo icon (using custom font)
-        const style = document.createElement('style');
-        style.innerHTML = `
-            .fa-zalo:before {
-                content: "Z";
-                font-family: Arial, sans-serif;
-                font-weight: bold;
-            }
-            
-            .floating-btn.zalo {
-                font-family: Arial, sans-serif;
-                font-weight: bold;
-                font-size: 20px;
-            }
-            
-            .floating-btn.catalog {
-                text-decoration: none;
-            }
-        `;
-        document.head.appendChild(style);
 
         // Initialize the page
         document.addEventListener('DOMContentLoaded', initializePage);
