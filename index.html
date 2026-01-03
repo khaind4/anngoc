@@ -1512,9 +1512,18 @@
             
             <nav class="nav">
                 <ul class="nav-links">
-                    <li><a href="https://anpham.sagomedia.vn/profile-thang-may-ngoc-an/" target="_blank" class="nav-link" title="Xem Profile công ty">
-                        <i class="fas fa-book-open" style="margin-right: 5px;"></i> Profile
+                    <li><a href="https://anpham.sagomedia.vn/profile-thang-may-ngoc-an/" target="_blank" class="nav-link" title="Xem Catalog công ty">
+                        <i class="fas fa-book-open" style="margin-right: 5px;"></i> Catalog
                     </a></li>
+                    <li class="dropdown">
+                        <a href="#services" class="nav-link" data-page="services">Dịch vụ <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-menu">
+                            <a href="#supply" class="dropdown-item" data-page="supply">Cung cấp thang máy</a>
+                            <a href="#consulting" class="dropdown-item" data-page="consulting">Tư vấn & thiết kế</a>
+                            <a href="#installation" class="dropdown-item" data-page="installation">Thi công & lắp đặt</a>
+                            <a href="#maintenance" class="dropdown-item" data-page="maintenance">Bảo trì & sửa chữa</a>
+                        </div>
+                    </li>
                     <li class="dropdown">
                         <a href="#products" class="nav-link" data-page="products">Sản phẩm <i class="fas fa-chevron-down"></i></a>
                         <div class="dropdown-menu">
@@ -1524,15 +1533,6 @@
                             <a href="#ceilings" class="dropdown-item" data-page="ceilings">Trần giả</a>
                             <a href="#handrails" class="dropdown-item" data-page="handrails">Tay vịn</a>
                             <a href="#floors" class="dropdown-item" data-page="floors">Sàn cabin</a>
-                        </div>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#services" class="nav-link" data-page="services">Dịch vụ <i class="fas fa-chevron-down"></i></a>
-                        <div class="dropdown-menu">
-                            <a href="#supply" class="dropdown-item" data-page="supply">Cung cấp thang máy</a>
-                            <a href="#consulting" class="dropdown-item" data-page="consulting">Tư vấn & thiết kế</a>
-                            <a href="#installation" class="dropdown-item" data-page="installation">Thi công & lắp đặt</a>
-                            <a href="#maintenance" class="dropdown-item" data-page="maintenance">Bảo trì & sửa chữa</a>
                         </div>
                     </li>
                     <li><a href="#projects" class="nav-link" data-page="projects">Dự án</a></li>
@@ -1567,9 +1567,19 @@
         </div>
         
         <div class="mobile-nav">
-            <a href="https://anpham.sagomedia.vn/profile-thang-may-ngoc-an/" target="_blank" class="mobile-nav-link" title="Xem Profile công ty">
-                <i class="fas fa-book-open" style="margin-right: 5px;"></i> Profile
+            <a href="https://anpham.sagomedia.vn/profile-thang-may-ngoc-an/" target="_blank" class="mobile-nav-link" title="Xem Catalog công ty">
+                <i class="fas fa-book-open" style="margin-right: 5px;"></i> Catalog
             </a>
+
+            <div class="mobile-nav-link" id="mobileServicesBtn">
+                Dịch vụ <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="mobile-dropdown" id="mobileServicesMenu">
+                <a href="#supply" class="mobile-dropdown-item" data-page="supply">Cung cấp thang máy</a>
+                <a href="#consulting" class="mobile-dropdown-item" data-page="consulting">Tư vấn & thiết kế</a>
+                <a href="#installation" class="mobile-dropdown-item" data-page="installation">Thi công & lắp đặt</a>
+                <a href="#maintenance" class="mobile-dropdown-item" data-page="maintenance">Bảo trì & sửa chữa</a>
+            </div>
             
             <div class="mobile-nav-link" id="mobileProductsBtn">
                 Sản phẩm <i class="fas fa-chevron-down"></i>
@@ -1583,36 +1593,13 @@
                 <a href="#floors" class="mobile-dropdown-item" data-page="floors">Sàn cabin</a>
             </div>
             
-            <div class="mobile-nav-link" id="mobileServicesBtn">
-                Dịch vụ <i class="fas fa-chevron-down"></i>
-            </div>
-            <div class="mobile-dropdown" id="mobileServicesMenu">
-                <a href="#supply" class="mobile-dropdown-item" data-page="supply">Cung cấp thang máy</a>
-                <a href="#consulting" class="mobile-dropdown-item" data-page="consulting">Tư vấn & thiết kế</a>
-                <a href="#installation" class="mobile-dropdown-item" data-page="installation">Thi công & lắp đặt</a>
-                <a href="#maintenance" class="mobile-dropdown-item" data-page="maintenance">Bảo trì & sửa chữa</a>
-            </div>
+            
             
             <a href="#projects" class="mobile-nav-link" data-page="projects">Dự án</a>
             <a href="#about" class="mobile-nav-link" data-page="about">Giới thiệu</a>
             <a href="#contact" class="mobile-nav-link" data-page="contact">Liên hệ</a>
         </div>
         
-        <div class="mobile-contact" style="margin-top: 30px;">
-            <h3 style="color: var(--secondary); margin-bottom: 15px;">Liên hệ</h3>
-            <div style="color: var(--gray); margin-bottom: 10px;">
-                <i class="fas fa-phone" style="color: var(--primary); margin-right: 10px;"></i>
-                0968 666 888
-            </div>
-            <div style="color: var(--gray); margin-bottom: 10px;">
-                <i class="fas fa-envelope" style="color: var(--primary); margin-right: 10px;"></i>
-                anngoc@gmail.com
-            </div>
-            <div style="color: var(--gray);">
-                <i class="fas fa-map-marker-alt" style="color: var(--primary); margin-right: 10px;"></i>
-                469 Nguyễn Hữu Thọ, Quận 7, TP.HCM
-            </div>
-        </div>
     </div>
 
     <!-- Main Content Container -->
