@@ -1,4 +1,4 @@
-
+﻿
 
 <!DOCTYPE html>
 <html lang="vi" prefix="og: https://ogp.me/ns#" class="loading-site no-js">
@@ -1613,14 +1613,31 @@ blockquote strong{
 	
 	
 	
-		<div id="respond" class="comment-respond">
-		<h3 id="reply-title" class="comment-reply-title">Trả lời <small><a rel="nofollow" id="cancel-comment-reply-link" href="/mau-cua-thang-may-sang-trong-chat-luong-gia-thanh-uu-dai/#respond" style="display:none;">Hủy</a></small></h3><form action="https://thangmaytaynam.com.vn/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate><p class="comment-notes"><span id="email-notes">Email của bạn sẽ không được hiển thị công khai.</span> <span class="required-field-message">Các trường bắt buộc được đánh dấu <span class="required">*</span></span></p><p class="comment-form-comment"><label for="comment">Bình luận <span class="required">*</span></label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required></textarea></p><p class="comment-form-author"><label for="author">Tên <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" autocomplete="name" required /></p>
-<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" autocomplete="email" required /></p>
-<p class="comment-form-url"><label for="url">Trang web</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" autocomplete="url" /></p>
-<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes" /> <label for="wp-comment-cookies-consent">Lưu tên của tôi, email, và trang web trong trình duyệt này cho lần bình luận kế tiếp của tôi.</label></p>
-<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Gửi bình luận" /> <input type='hidden' name='comment_post_ID' value='12684' id='comment_post_ID' />
-<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
-</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="f15f170327" /></p><p style="display: none !important;" class="akismet-fields-container" data-prefix="ak_"><label>&#916;<textarea name="ak_hp_textarea" cols="45" rows="8" maxlength="100"></textarea></label><input type="hidden" id="ak_js_1" name="ak_js" value="24"/><script>document.getElementById( "ak_js_1" ).setAttribute( "value", ( new Date() ).getTime() );</script></p></form>	</div><!-- #respond -->
+				<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Trả lời</h3>
+		<form id="commentform" class="comment-form" onsubmit="return sendCommentMailto(event)">
+			<p class="comment-notes"><span id="email-notes">Email của bạn sẽ không được hiển thị công khai.</span> <span class="required-field-message">Các trường bắt buộc được đánh dấu <span class="required">*</span></span></p>
+			<p class="comment-form-comment"><label for="comment">Bình luận <span class="required">*</span></label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required></textarea></p>
+			<p class="comment-form-author"><label for="author">Tên <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" autocomplete="name" required /></p>
+			<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" autocomplete="email" required /></p>
+			<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Gửi bình luận" /></p>
+		</form>
+	</div><!-- #respond -->
+	<script>
+	function sendCommentMailto(event) {
+		event.preventDefault();
+		var name = document.getElementById('author').value;
+		var email = document.getElementById('email').value;
+		var comment = document.getElementById('comment').value;
+		var pageTitle = document.title;
+		
+		var subject = encodeURIComponent('Bình luận từ website - ' + pageTitle);
+		var body = encodeURIComponent('Tên: ' + name + '\nEmail: ' + email + '\n\nBình luận:\n' + comment + '\n\nTrang: ' + window.location.href);
+		
+		window.location.href = 'mailto:anngocnhatrang@gmail.com?subject=' + subject + '&body=' + body;
+		return false;
+	}
+	</script>
 	
 </div>
 			<!-- end -->
