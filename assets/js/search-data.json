@@ -1,0 +1,134 @@
+[
+    {
+        "title": "Trang chủ - Thang Máy An Ngọc",
+        "url": "index.html",
+        "content": "Thang Máy An Ngọc, lắp đặt thang máy gia đình, thang máy bệnh viện, thang máy quan sát uy tín. Công ty TNHH Thương Mại Dịch Vụ Thang Máy An Ngọc.",
+        "category": "Trang chủ"
+    },
+    {
+        "title": "Giới thiệu",
+        "url": "pages/gioi-thieu.html",
+        "content": "Giới thiệu về Thang Máy An Ngọc, công ty chuyên cung cấp và lắp đặt thang máy uy tín tại Nha Trang, Khánh Hòa.",
+        "category": "Giới thiệu"
+    },
+    {
+        "title": "Thang máy tải khách",
+        "url": "pages/thang-may-tai-khach.html",
+        "content": "Thang máy tải khách đóng vai trò không thể thiếu trong các dự án cao tầng, trung tâm thương mại, tòa nhà cao ốc, và các căn hộ chung cư. Thang máy tải khách, còn được gọi là thang máy chở người, là dòng sản phẩm thang máy phổ biến nhất trong cuộc sống hàng ngày. Thang máy tải khách tải trọng nhỏ và thang máy tải khách cao tầng.",
+        "category": "Sản phẩm"
+    },
+    {
+        "title": "Thang máy gia đình",
+        "url": "pages/thang-may-gia-dinh.html",
+        "content": "Thang máy gia đình, thang máy mini cho nhà ở, kích thước nhỏ gọn, phù hợp với hộ gia đình. Tải trọng không vượt quá 450kg, tốc độ từ 15m/phút đến 30m/phút.",
+        "category": "Sản phẩm"
+    },
+    {
+        "title": "Thang máy tải hàng",
+        "url": "pages/thang-may-tai-hang.html",
+        "content": "Thang máy tải hàng, thang máy vận chuyển hàng hóa, thiết kế chuyên dụng cho nhà xưởng, kho bãi, siêu thị. Tải trọng lớn, vận hành ổn định.",
+        "category": "Sản phẩm"
+    },
+    {
+        "title": "Thang máy bệnh viện",
+        "url": "pages/thang-may-benh-vien.html",
+        "content": "Thang máy bệnh viện, thang máy y tế, thiết kế đặc biệt cho bệnh viện, phòng khám. Không gian rộng rãi cho giường bệnh và xe lăn, vận hành êm ái.",
+        "category": "Sản phẩm"
+    },
+    {
+        "title": "Thang máy quan sát",
+        "url": "pages/thang-may-quan-sat.html",
+        "content": "Thang máy quan sát, thang máy kính, thiết kế sang trọng với cabin trong suốt. Phù hợp cho trung tâm thương mại, khách sạn, tòa nhà cao cấp.",
+        "category": "Sản phẩm"
+    },
+    {
+        "title": "Thang máy tải ô tô",
+        "url": "pages/thang-may-tai-oto.html",
+        "content": "Thang máy tải ô tô, thang máy nâng xe hơi, thiết kế cho bãi đỗ xe tự động, trung tâm sửa chữa ô tô. Tải trọng lớn, an toàn cao.",
+        "category": "Sản phẩm"
+    },
+    {
+        "title": "Thang máy tải thực phẩm",
+        "url": "pages/thang-may-tai-thuc-pham.html",
+        "content": "Thang máy tải thực phẩm, thang máy nhà bếp, thang tải đồ ăn cho nhà hàng, khách sạn. Thiết kế vệ sinh, gọn gàng.",
+        "category": "Sản phẩm"
+    },
+    {
+        "title": "Lắp đặt thang máy",
+        "url": "pages/lap-dat-thang-may.html",
+        "content": "Dịch vụ lắp đặt thang máy chuyên nghiệp, thi công thang máy gia đình, thang máy tải khách. Đội ngũ kỹ thuật giàu kinh nghiệm.",
+        "category": "Dịch vụ"
+    },
+    {
+        "title": "Bảo trì thang máy",
+        "url": "pages/bao-tri-thang-may.html",
+        "content": "Dịch vụ bảo trì thang máy định kỳ, kiểm tra bảo dưỡng thang máy. Đảm bảo thang máy vận hành an toàn, ổn định.",
+        "category": "Dịch vụ"
+    },
+    {
+        "title": "Sửa chữa thang máy",
+        "url": "pages/sua-chua-thang-may.html",
+        "content": "Dịch vụ sửa chữa thang máy 24/7, khắc phục sự cố thang máy nhanh chóng. Thay thế linh kiện chính hãng.",
+        "category": "Dịch vụ"
+    },
+    {
+        "title": "Nâng cấp thang máy",
+        "url": "pages/nang-cap-thang-may.html",
+        "content": "Dịch vụ nâng cấp thang máy, cải tạo thang máy cũ, nâng cấp hệ thống điều khiển, cabin thang máy.",
+        "category": "Dịch vụ"
+    },
+    {
+        "title": "Dự án thi công",
+        "url": "pages/du-an-thi-cong.html",
+        "content": "Các dự án thi công lắp đặt thang máy của Thang Máy An Ngọc. Thành công trong nhiều công trình lớn nhỏ tại Nha Trang và các tỉnh thành.",
+        "category": "Dự án"
+    },
+    {
+        "title": "Kinh nghiệm hay",
+        "url": "pages/kinh-nghiem-hay.html",
+        "content": "Chia sẻ kinh nghiệm sử dụng thang máy, mẹo bảo trì, cách lựa chọn thang máy phù hợp cho gia đình và công trình.",
+        "category": "Kinh nghiệm"
+    },
+    {
+        "title": "Cách sử dụng và lựa chọn thang máy gia đình",
+        "url": "pages/cach-su-dung.html",
+        "content": "Hướng dẫn cách sử dụng thang máy gia đình an toàn, quy tắc an toàn, nút điều khiển, giới hạn trọng tải, bảo dưỡng định kỳ. Lựa chọn thang máy gia đình, loại thang máy, thiết kế cabin, chất lượng thương hiệu.",
+        "category": "Kinh nghiệm"
+    },
+    {
+        "title": "Những tiêu chuẩn nghiệm thu thang máy",
+        "url": "pages/nhung-tieu-chuan.html",
+        "content": "Tiêu chuẩn nghiệm thu thang máy, kiểm tra chất lượng thang máy sau lắp đặt. Các gia chủ cần lưu ý khi nghiệm thu thang máy.",
+        "category": "Kinh nghiệm"
+    },
+    {
+        "title": "Mẫu cửa thang máy",
+        "url": "pages/mau-cua-thang-may.html",
+        "content": "Mẫu cửa thang máy sang trọng, chất lượng cao, giá thành ưu đãi. Cửa thang máy inox, cửa thang máy kính, thiết kế hiện đại.",
+        "category": "Kinh nghiệm"
+    },
+    {
+        "title": "Quy định thang máy chữa cháy",
+        "url": "pages/mach-ban.html",
+        "content": "Quy định thang máy chữa cháy trong tòa nhà cao tầng, an toàn phòng cháy chữa cháy, thang máy cứu hỏa theo tiêu chuẩn.",
+        "category": "Kinh nghiệm"
+    },
+    {
+        "title": "Liên hệ",
+        "url": "pages/lien-he.html",
+        "content": "Liên hệ Thang Máy An Ngọc, hotline 0961 834 265, email anngocnhatrang@gmail.com. Địa chỉ Lô 37, LK3-6 gói 3 KĐT Mỹ Gia, Phường Vĩnh Thái, Nha Trang, Khánh Hòa.",
+        "category": "Liên hệ"
+    },
+    {
+        "title": "Sản phẩm",
+        "url": "pages/san-pham.html",
+        "content": "Danh mục sản phẩm thang máy của Thang Máy An Ngọc. Thang máy tải khách, thang máy gia đình, thang máy tải hàng, thang máy bệnh viện.",
+        "category": "Sản phẩm"
+    },
+    {
+        "title": "Dịch vụ",
+        "url": "pages/dich-vu.html",
+        "content": "Các dịch vụ thang máy của Thang Máy An Ngọc. Lắp đặt, bảo trì, sửa chữa, nâng cấp thang máy chuyên nghiệp.",
+        "category": "Dịch vụ"
+    }
+]
