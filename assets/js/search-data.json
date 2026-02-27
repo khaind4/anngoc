@@ -1,14 +1,14 @@
 [
     {
-        "title": "Trang chủ - Thang Máy An Ngọc",
+        "title": "Trang chủ - Thang Máy NTE",
         "url": "index.html",
-        "content": "Thang Máy An Ngọc, lắp đặt thang máy gia đình, thang máy bệnh viện, thang máy quan sát uy tín. CÔNG TY TNHH AN NGỌC NHA TRANG.",
+        "content": "Thang Máy NTE, lắp đặt thang máy gia đình, thang máy bệnh viện, thang máy quan sát uy tín. Công ty TNHH Thang máy NTE.",
         "category": "Trang chủ"
     },
     {
         "title": "Giới thiệu",
         "url": "pages/gioi-thieu.html",
-        "content": "Giới thiệu về Thang Máy An Ngọc, công ty chuyên cung cấp và lắp đặt thang máy uy tín tại Nha Trang, Khánh Hòa.",
+        "content": "Giới thiệu về Thang Máy NTE, công ty chuyên cung cấp và lắp đặt thang máy uy tín tại Nha Trang, Khánh Hòa.",
         "category": "Giới thiệu"
     },
     {
@@ -80,7 +80,7 @@
     {
         "title": "Dự án thi công",
         "url": "pages/du-an-thi-cong.html",
-        "content": "Các dự án thi công lắp đặt thang máy của Thang Máy An Ngọc. Thành công trong nhiều công trình lớn nhỏ tại Nha Trang và các tỉnh thành.",
+        "content": "Các dự án thi công lắp đặt thang máy của Thang Máy NTE. Thành công trong nhiều công trình lớn nhỏ tại Nha Trang và các tỉnh thành.",
         "category": "Dự án"
     },
     {
@@ -116,19 +116,19 @@
     {
         "title": "Liên hệ",
         "url": "pages/lien-he.html",
-        "content": "Liên hệ Thang Máy An Ngọc, hotline 0961 834 265, email anngocnhatrang@gmail.com. Địa chỉ Lô 37, LK3-6 gói 3 KĐT Mỹ Gia, Phường Vĩnh Thái, Nha Trang, Khánh Hòa.",
+        "content": "Liên hệ Thang Máy NTE, hotline 0961 834 265, email viet.nguyen@thangmaynte.com. Địa chỉ Lô 37, LK3-6 gói 3 KĐT Mỹ Gia, Phường Vĩnh Thái, Nha Trang, Khánh Hòa.",
         "category": "Liên hệ"
     },
     {
         "title": "Sản phẩm",
         "url": "pages/san-pham.html",
-        "content": "Danh mục sản phẩm thang máy của Thang Máy An Ngọc. Thang máy tải khách, thang máy gia đình, thang máy tải hàng, thang máy bệnh viện.",
+        "content": "Danh mục sản phẩm thang máy của Thang Máy NTE. Thang máy tải khách, thang máy gia đình, thang máy tải hàng, thang máy bệnh viện.",
         "category": "Sản phẩm"
     },
     {
         "title": "Dịch vụ",
         "url": "pages/dich-vu.html",
-        "content": "Các dịch vụ thang máy của Thang Máy An Ngọc. Lắp đặt, bảo trì, sửa chữa, nâng cấp thang máy chuyên nghiệp.",
+        "content": "Các dịch vụ thang máy của Thang Máy NTE. Lắp đặt, bảo trì, sửa chữa, nâng cấp thang máy chuyên nghiệp.",
         "category": "Dịch vụ"
     }
 ]

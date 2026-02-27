@@ -1,5 +1,5 @@
 /**
- * Local Search Script for Thang Máy An Ngọc
+ * Local Search Script for Thang Máy NTE
  * Tìm kiếm nội bộ trong các file HTML local
  */
 
